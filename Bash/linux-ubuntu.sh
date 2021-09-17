@@ -87,7 +87,10 @@ function main {
     f_sysctl
     f_package_install
     f_package_remove
-    
+    f_adduser
+    f_rootaccess
+    f_password
+    f_ctrlaltdel
 }
 
 LOGFILE="hardening-$(hostname --short)-$(date +%y%m%d).log"
