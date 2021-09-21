@@ -91,6 +91,7 @@ function main {
     f_rootaccess
     f_password
     f_ctrlaltdel
+    f_sshconfig
 }
 
 LOGFILE="hardening-$(hostname --short)-$(date +%y%m%d).log"

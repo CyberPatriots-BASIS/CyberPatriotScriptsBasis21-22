@@ -1,4 +1,4 @@
-# /bin/bash
+#! /bin/bash
 
 function f_sshdconfig {
   ((SCRIPT_NUM++))
@@ -150,16 +150,10 @@ function f_sshdconfig {
 
   systemctl restart sshd.service
 
-  if [[ $VERBOSE == "Y" ]]; then
-    systemctl status sshd.service --no-pager
-    echo
-  fi
-
-  ((SCRIPT_COUNT++))
 }
 
 function f_sshconfig {
-  echo "[$SCRIPT_COUNT] $SSHFILE"
+  echo "Script: [$SCRIPT_NUM] ::: Securing $SSHFILE"
 
   cp "$SSHFILE" "/etc/ssh/ssh_config.$(date +%y%m%d)"
 

@@ -1,16 +1,13 @@
 #! /bin/bash
 
 function f_ctrlaltdel {
-  echo "[$SCRIPT_COUNT] Ctrl-alt-delete"
+  ((SCRIPT_NUM++))
+  echo "Script: [$SCRIPT_NUM] ::: Disabling Ctrl-alt-delete"
 
   systemctl mask ctrl-alt-del.target
 
   sed -i 's/^#CtrlAltDelBurstAction=.*/CtrlAltDelBurstAction=none/' "$SYSTEMCONF"
 
-  if [[ $VERBOSE == "Y" ]]; then
-    systemctl status ctrl-alt-del.target --no-pager
-    echo
-  fi
 
-  ((SCRIPT_COUNT++))
+
 }
