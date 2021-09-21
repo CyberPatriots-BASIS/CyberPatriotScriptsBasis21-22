@@ -92,6 +92,20 @@ function main {
     f_password
     f_ctrlaltdel
     f_sshconfig
+    f_cron
+    f_auditd
+    f_disablemod
+    f_rhosts
+    f_users
+    f_rkhunter
+    f_apport
+    f_lockroot
+    f_postfix
+    f_usbguard
+    f_kernel
+    f_sudo
+    f_psad
+    
 }
 
 LOGFILE="hardening-$(hostname --short)-$(date +%y%m%d).log"
