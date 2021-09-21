@@ -1,6 +1,7 @@
 #! /bin/bash
 
 function f_searchusers {
+    echo "$USERNAMES"
     echo -n "Do you wish to add a user [y/n]?" 
     read response
     if [ $response = "y" ];
