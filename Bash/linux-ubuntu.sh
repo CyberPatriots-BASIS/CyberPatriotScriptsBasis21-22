@@ -92,6 +92,7 @@ function main {
     f_password
     f_ctrlaltdel
     f_sshconfig
+    f_sshdconfig
     f_cron
     f_auditd
     f_disablemod
