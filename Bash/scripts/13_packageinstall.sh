@@ -29,7 +29,7 @@ function f_package_install {
   PACKAGE_INSTALL="acct aide-common cracklib-runtime debsums gnupg2 haveged libpam-pwquality libpam-tmpdir needrestart openssh-server postfix psad rkhunter sysstat systemd-coredump tcpd update-notifier-common vlock $APPARMOR $AUDITD $VM"
 
   for deb_install in $PACKAGE_INSTALL; do
-    apt-get install --no-install-recommends "$deb_install"
+    apt-get install -y --no-install-recommends "$deb_install"
   done
 
   if [[ -f /etc/default/sysstat ]]; then
@@ -47,7 +47,7 @@ function f_package_remove {
   PACKAGE_REMOVE="apport* autofs avahi* beep git pastebinit popularity-contest rsh* rsync talk* telnet* tftp* whoopsie xinetd yp-tools ypbind"
 
   for deb_remove in $PACKAGE_REMOVE; do
-    apt-get --purge "$deb_remove"
+    apt-get --purge "$deb_remove" -y
   done
 
 
