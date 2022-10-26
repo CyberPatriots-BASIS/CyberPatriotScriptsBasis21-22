@@ -2,20 +2,8 @@
 
 function f_firewall {
     ((SCRIPT_NUM++))
-
-
-    echo "Script: [$SCRIPT_NUM] ::: Installing UFW "
-    if ![apt list | grep ufw] then
-      read -r -p "UFW is not installed. Would you like it installed? Y/N > " ufwYesNo
-    fi
-
-    if [ ufwYesNo == "Y" ]; then
         apt install -y ufw
-    else 
-        echo "Script: [$SCRIPT_NUM] ::: UFW installation denied by user"
-
-        return
-    fi
+    
 
     echo "Script: [$SCRIPT_NUM] ::: Editing rules for UFW"
     ufw --force enable
