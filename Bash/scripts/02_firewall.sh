@@ -5,7 +5,7 @@ function f_firewall {
 
 
     echo "Script: [$SCRIPT_NUM] ::: Installing UFW "
-    if ! dpkg -l | grep ufw 2> /dev/null 1>&2; then
+    if ![apt list | grep ufw] then
       read -r -p "UFW is not installed. Would you like it installed? Y/N > " ufwYesNo
     fi
 
