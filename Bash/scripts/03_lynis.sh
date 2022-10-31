@@ -20,5 +20,5 @@ function f_lynis {
     
     cd lynis || return
     echo "Script: [$SCRIPT_NUM] ::: Running lynis, echo is off, reference lynis log"
-    ./lynis audit system > "../lynis-$(hostname --short)-$(date +%y%m%d%H%M).log"
+    ./lynis audit system >> "../lynis-$(hostname --short)-$(date +%y%m%d%H%M).log"
 }

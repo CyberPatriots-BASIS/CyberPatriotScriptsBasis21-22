@@ -16,7 +16,7 @@ function f_password {
     sed -i 's/nullok_secure//' "$COMMONAUTH"
 
     if ! grep retry= "$COMMONPASSWD"; then
-      echo 'password requisite pam_pwquality.so retry=3' >> "$COMMONPASSWD"
+      echo 'password requisite pam_pwquality.so retry=3 minlen=8 lcredit=-1 ucredit=-1 dcredit=-1 ocredit=-1' >> "$COMMONPASSWD"
     fi
 
     if ! grep tally2 "$COMMONAUTH"; then

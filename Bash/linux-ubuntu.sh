@@ -90,6 +90,7 @@ function main {
     f_adduser
     f_rootaccess
     f_password
+    f_resolvedconf
     f_ctrlaltdel
     f_sshconfig
     f_sshdconfig
