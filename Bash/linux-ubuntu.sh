@@ -108,6 +108,7 @@ function main {
     f_sudo
     f_psad
     f_searchusers
+    f_admin
 }
 
 LOGFILE="hardening-$(hostname --short)-$(date +%y%m%d).log"

@@ -15,6 +15,8 @@ function f_password {
     sed -i 's/try_first_pass sha512.*/try_first_pass sha512 rounds=65536/' "$COMMONPASSWD"
     sed -i 's/nullok_secure//' "$COMMONAUTH"
 
+    apt install libpam-cracklib
+
     if ! grep retry= "$COMMONPASSWD"; then
       echo 'password requisite pam_pwquality.so retry=3 minlen=8 lcredit=-1 ucredit=-1 dcredit=-1 ocredit=-1' >> "$COMMONPASSWD"
     fi
