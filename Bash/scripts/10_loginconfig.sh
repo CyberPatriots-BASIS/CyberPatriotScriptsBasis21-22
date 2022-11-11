@@ -1,7 +1,8 @@
 #! /bin/bash
 
 function f_loginconf {
-  echo "[$SCRIPT_COUNT] /etc/login.defs"
+  ((SCRIPT_NUM++))
+  echo "[$SCRIPT_NUM] /etc/login.defs"
 
   sed -i 's/^.*LOG_OK_LOGINS.*/LOG_OK_LOGINS yes/' "$LOGINDEFS"
   sed -i 's/^UMASK.*/UMASK 077/' "$LOGINDEFS"
@@ -13,5 +14,5 @@ function f_loginconf {
   sed -i 's/^#.*SHA_CRYPT_MIN_ROUNDS .*/SHA_CRYPT_MIN_ROUNDS 10000/' "$LOGINDEFS"
   sed -i 's/^#.*SHA_CRYPT_MAX_ROUNDS .*/SHA_CRYPT_MAX_ROUNDS 65536/' "$LOGINDEFS"
 
-  ((SCRIPT_COUNT++))
+  
 }

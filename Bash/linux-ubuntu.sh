@@ -73,7 +73,6 @@ function main {
 
     f_prechecks
     f_firewall
-    f_lynis
     f_netprocdisable
     f_badfsdisable
     f_systemdconfig
@@ -92,8 +91,21 @@ function main {
     f_password
     f_resolvedconf
     f_ctrlaltdel
-    f_sshconfig
-    f_sshdconfig
+    read -p "Configure ssh? [y/n]: " a
+		if [ $a = y ]
+		then
+            f_sshconfig
+            f_sshdconfig
+		else
+            break;
+        fi
+    read -p "Configure FTP? [y/n]: " b
+        if [ $b = y ]
+        then
+            f_ftpconfig
+        else
+            break;
+        fi
     f_cron
     f_auditd
     f_disablemod
@@ -109,6 +121,8 @@ function main {
     f_psad
     f_searchusers
     f_admin
+    f_linpeas
+    f_lynis
 }
 
 LOGFILE="hardening-$(hostname --short)-$(date +%y%m%d).log"
