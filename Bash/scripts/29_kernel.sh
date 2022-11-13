@@ -1,7 +1,7 @@
 #! /bin/bash
 
 function f_kernel {
-  ((SCRIPT_NUM++))
+  
   echo "Script: [$SCRIPT_NUM] ::: Kernel parameters"
 
   local HASHSIZE
@@ -19,4 +19,5 @@ function f_kernel {
       echo "GRUB_CMDLINE_LINUX=\"\$GRUB_CMDLINE_LINUX lockdown=confidentiality\"" > "$DEFAULTGRUB/99-hardening-lockdown.cfg"
     fi
   fi
+  ((SCRIPT_NUM++))
 }

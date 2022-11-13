@@ -1,6 +1,7 @@
 function f_linpeas {
-    ((SCRIPT_NUM++))
-
+    
+    
+    echo "Script: [$SCRIPT_NUM] ::: linPEAS"
     if !  dpkg -l | grep git; then
         read -p -r "Git isn't installed. Install? Y/n >" gitInstallYesNo
 
@@ -22,5 +23,5 @@ function f_linpeas {
         return
     fi
         
-
+((SCRIPT_NUM++))
 }

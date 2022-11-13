@@ -1,11 +1,11 @@
 #! /bin/bash
 
 function f_netprocdisable {
-  ((SCRIPT_NUM++))
+  
 
   echo "Script: [$SCRIPT_NUM] ::: Disabling all bad network protocols."
 
-  echo "Script: [$SCRIPT_NUM] ::: Disabling \"dccp" "sctp" "rds" "tipc"
+  echo "Script: [$SCRIPT_NUM] ::: Disabling \"dccp" "sctp" "rds" "tipc\""
 
   local NET
   NET="dccp sctp rds tipc"
@@ -15,5 +15,5 @@ function f_netprocdisable {
     fi
   done
 
-  
+  ((SCRIPT_NUM++))
 }

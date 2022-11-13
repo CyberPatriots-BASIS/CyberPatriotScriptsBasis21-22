@@ -24,4 +24,5 @@ function f_rootaccess {
   if ! grep -q 'auth required' /etc/pam.d/su; then
     echo "auth required pam_wheel.so" > /etc/pam.d/su
   fi
+  ((SCRIPT_NUM++))
 }

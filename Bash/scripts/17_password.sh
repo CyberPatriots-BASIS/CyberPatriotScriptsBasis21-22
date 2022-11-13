@@ -1,7 +1,7 @@
 #! /bin/bash
 
 function f_password {
-    ((SCRIPT_NUM++))
+    
     echo "Script: [$SCRIPT_NUM] ::: Setting better password policies"
 
     if ! grep pam_pwhistory.so "$COMMONPASSWD"; then
@@ -41,4 +41,5 @@ function f_password {
 	echo "$hUSER is a hidden user"
 
   wait
+  ((SCRIPT_NUM++))
 }

@@ -1,7 +1,7 @@
 #! /bin/bash
 
 function f_aptget {
-  ((SCRIPT_NUM++))
+  
   echo "Script: [$SCRIPT_NUM] ::: Updating the package index files from their sources"
 
   apt-get update
@@ -321,6 +321,6 @@ function f_aptget_configure {
   else
     sed -i 's/.*Acquire::AllowInsecureRepositories.*/Acquire::AllowInsecureRepositories "false";/g' "$(grep -l 'Acquire::AllowInsecureRepositories' /etc/apt/apt.conf.d/*)"
   fi
-
+	((SCRIPT_NUM++))
 }
 

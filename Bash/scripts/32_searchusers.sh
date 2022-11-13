@@ -1,6 +1,7 @@
 #! /bin/bash
 
 function f_searchusers {
+    echo "Script: [$SCRIPT_NUM] ::: Searching for users"
     echo "$USERNAMES"
     echo -n "Do you wish to add a user [y/n]?" 
     read response
@@ -21,4 +22,5 @@ function f_searchusers {
             sudo deluser --remove-home $i
         fi
     done
+    ((SCRIPT_NUM++))
 }

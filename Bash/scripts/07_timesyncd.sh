@@ -1,7 +1,7 @@
 #! /bin/bash
 
 function f_timesyncd {
-    ((SCRIPT_NUM++))
+    
 
   echo "Script: [$SCRIPT_NUM] ::: Systemd/timesyncd.conf"
 
@@ -84,5 +84,5 @@ function f_timesyncd {
 
   
 
-  
+  ((SCRIPT_NUM++))
 }

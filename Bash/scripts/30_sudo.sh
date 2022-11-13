@@ -1,7 +1,7 @@
 #! /bin/bash
 
 function f_sudo {
-  ((SCRIPT_NUM++))
+  
   echo "Script: [$SCRIPT_NUM] ::: sudo configuration"
 
   if ! grep -qER '^Defaults.*use_pty$' /etc/sudo*; then
@@ -36,6 +36,5 @@ function f_sudo {
 
     sudo -ll > sudoll.log
     echo
-
-
+((SCRIPT_NUM++))
 }

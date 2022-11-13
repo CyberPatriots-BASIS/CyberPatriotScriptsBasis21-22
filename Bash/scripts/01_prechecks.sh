@@ -2,7 +2,7 @@
 
 function f_prechecks {
     SCRIPT_NUM="0"
-    ((SCRIPT_NUM++))
+    
 
     export TERM=linux
     export DEBIAN_FRONTEND=noninteractive
@@ -17,5 +17,5 @@ function f_prechecks {
     
     
 
-
+((SCRIPT_NUM++))
 }

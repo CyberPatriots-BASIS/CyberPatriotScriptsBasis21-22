@@ -1,7 +1,7 @@
 #! /bin/bash
 
 function f_prelink {
-    ((SCRIPT_NUM++))
+    
   echo "Script: [$SCRIPT_NUM] ::: Prelink"
 
   if dpkg -l | grep prelink 1> /dev/null; then
@@ -9,5 +9,5 @@ function f_prelink {
     "$APT" purge prelink
   fi
 
-  
+  ((SCRIPT_NUM++))
 }

@@ -1,7 +1,7 @@
 #! /bin/bash
 
 function f_firewall {
-    ((SCRIPT_NUM++))
+    
         apt install -y ufw
     
 
@@ -29,11 +29,11 @@ function f_firewall {
     ufw reload
 
     read -p "Would you like UFW to be verbose? Y/n > " verboseUFWYesNo
-    if [ "$verboseUFWYesNo" == "Y" ]; then
+    if [ "$verboseUFWYesNo" == "y" || $verboseUFWYesNo == "Y" ]; then
         ufw status verbose
     else
         echo "Script: [$SCRIPT_NUM] ::: UFW not verbose"
     fi
 
-    
+    ((SCRIPT_NUM++))
 }

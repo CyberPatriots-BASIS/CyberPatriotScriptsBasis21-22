@@ -1,7 +1,7 @@
 #! /bin/bash
 
 function f_apport {
-  ((SCRIPT_NUM++))
+ 
   echo "Script: [$SCRIPT_NUM] ::: Disable apport, ubuntu-report and popularity-contest"
 
   if command -v gsettings 2>/dev/null 1>&2; then
@@ -23,5 +23,5 @@ function f_apport {
   fi
 
   systemctl daemon-reload
-
+ ((SCRIPT_NUM++))
 }

@@ -1,4 +1,6 @@
 function f_admin {
+	
+  	echo "Script: [$SCRIPT_NUM] ::: Search for admins"
     for x in $USERNAMES
 	do
 		read -p "Is $x considered an admin?[y/n]: " a
@@ -17,4 +19,5 @@ function f_admin {
 			sudo deluser $x sudo
 		fi
 	done
+	((SCRIPT_NUM++))
 }

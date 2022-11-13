@@ -69,5 +69,5 @@ function f_sysctl {
   chmod 0600 "$SYSCTL"
   systemctl restart systemd-sysctl
 
-  ((SCRIPT_COUNT++))
+  ((SCRIPT_NUM++))
 }

@@ -1,7 +1,7 @@
 #! /bin/bash
 
 function f_sshdconfig {
-  ((SCRIPT_NUM++))
+  
   echo "Script: [$SCRIPT_NUM] ::: Configuring $SSHDFILE to be as secure as possible."
 
   awk '$5 >= 3071' /etc/ssh/moduli > /etc/ssh/moduli.tmp
@@ -164,4 +164,5 @@ function f_sshconfig {
 
   sed -i 's/#.*Ciphers .*/    Ciphers chacha20-poly1305@openssh.com,aes256-gcm@openssh.com,aes256-ctr/g' "$SSHFILE"
   sed -i 's/#.*MACs .*/    MACs hmac-sha2-512-etm@openssh.com,hmac-sha2-256-etm@openssh.com,hmac-sha2-512,hmac-sha2-256/' "$SSHFILE"
+  ((SCRIPT_NUM++))
 }

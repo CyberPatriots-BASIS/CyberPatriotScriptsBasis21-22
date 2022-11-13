@@ -12,5 +12,5 @@ function f_rhosts {
     rm /etc/hosts.equiv
   fi
 
-  ((SCRIPT_COUNT++))
+  ((SCRIPT_NUM++))
 }

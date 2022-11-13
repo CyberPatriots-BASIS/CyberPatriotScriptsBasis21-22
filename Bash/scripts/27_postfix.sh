@@ -2,7 +2,7 @@
 
   
 function f_postfix {
-  ((SCRIPT_NUM++))
+  
   echo "Script: [$SCRIPT_NUM] ::: Set up Postfix"
 
   postconf -e disable_vrfy_command=yes
@@ -11,5 +11,5 @@ function f_postfix {
   postconf -e inet_interfaces=loopback-only
 
   systemctl restart postfix.service
-
+((SCRIPT_NUM++))
 }

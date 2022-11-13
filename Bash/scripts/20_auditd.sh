@@ -1,7 +1,7 @@
 #! /bin/bash
 
 function f_auditd {
-  ((SCRIPT_NUM++))
+ 
   echo "Script: [$SCRIPT_NUM] ::: Running Auditd"
 
   sed -i 's/^action_mail_acct =.*/action_mail_acct = root/' "$AUDITDCONF"
@@ -25,5 +25,5 @@ function f_auditd {
 
   systemctl enable auditd
   systemctl restart auditd.service
-
+ ((SCRIPT_NUM++))
 }

@@ -1,7 +1,7 @@
 #! /bin/bash
 
 function f_usbguard {
-  ((SCRIPT_NUM++))
+  
   echo "Script: [$SCRIPT_NUM] ::: Enable usbguard"
 
   apt-get install --no-install-recommends usbguard
@@ -11,5 +11,5 @@ function f_usbguard {
 
   systemctl enable usbguard.service
   systemctl start usbguard.service
-
+((SCRIPT_NUM++))
 }

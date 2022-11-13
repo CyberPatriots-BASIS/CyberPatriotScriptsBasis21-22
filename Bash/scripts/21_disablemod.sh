@@ -1,7 +1,7 @@
 #! /bin/bash
 
 function f_disablemod {
-  ((SCRIPT_NUM++))
+  
   echo "Script: [$SCRIPT_NUM] ::: Disable misc kernel modules"
 
   local MOD
@@ -11,5 +11,5 @@ function f_disablemod {
       echo "install $disable /bin/true" >> "$DISABLEMOD"
     fi
   done
-
+((SCRIPT_NUM++))
 }

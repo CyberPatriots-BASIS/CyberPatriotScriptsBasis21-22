@@ -16,5 +16,5 @@ function f_systemdconfig {
   echo "Script: [$SCRIPT_NUM] ::: Reloading systemctl daemon"
 
   systemctl daemon-reload
-
+((SCRIPT_NUM++))
 }

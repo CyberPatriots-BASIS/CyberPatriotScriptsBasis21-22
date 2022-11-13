@@ -35,5 +35,5 @@ function f_resolvedconf {
     echo
   fi
 
-  ((SCRIPT_COUNT++))
+  ((SCRIPT_NUM++))
 }

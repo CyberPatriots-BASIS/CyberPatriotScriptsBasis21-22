@@ -1,7 +1,7 @@
 #! /bin/bash
 
 function f_psad {
-  ((SCRIPT_NUM++))
+  
   echo "Script: [$SCRIPT_NUM] ::: Enable psad"
 
   if ! test -f "$PSADCONF"; then
@@ -37,5 +37,5 @@ function f_psad {
   psad --sig-update
   psad -H
   psad --fw-analyze
-
+((SCRIPT_NUM++))
 }

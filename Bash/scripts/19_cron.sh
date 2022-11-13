@@ -1,7 +1,7 @@
 #! /bin/bash
 
 function f_cron {
-  ((SCRIPT_NUM++))
+ 
   echo "Script: [$SCRIPT_NUM] ::: Securing /etc/cron and /etc/at"
 
   rm /etc/cron.deny 2> /dev/null
@@ -22,5 +22,5 @@ function f_cron {
 
   sed -i 's/^#cron./cron./' /etc/rsyslog.d/50-default.conf
 
-
+ ((SCRIPT_NUM++))
 }

@@ -1,7 +1,7 @@
 #! /bin/bash
 
 function f_lynis {
-    ((SCRIPT_NUM++))
+    
 
     if !  dpkg -l | grep git; then
         read -p -r "Git isn't installed. Install? Y/n >" gitInstallYesNo
@@ -21,4 +21,5 @@ function f_lynis {
     cd lynis || return
     echo "Script: [$SCRIPT_NUM] ::: Running lynis, echo is off, reference lynis log"
     ./lynis audit system >> "../lynis-$(hostname --short)-$(date +%y%m%d%H%M).log"
+    ((SCRIPT_NUM++))
 }

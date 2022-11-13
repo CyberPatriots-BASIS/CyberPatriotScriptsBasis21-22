@@ -2,7 +2,7 @@
 
   
 function f_badfsdisable {
-    ((SCRIPT_NUM++))
+    
     echo "Script: [$SCRIPT_NUM] ::: Disable old file systems"
 
     local FS
@@ -12,4 +12,5 @@ function f_badfsdisable {
       echo "install $disable /bin/true" >> "$DISABLEFS"
     fi
     done
+    ((SCRIPT_NUM++))
 }

@@ -2,7 +2,7 @@
 
 
 function f_package_install {
-    ((SCRIPT_NUM++))
+   
   echo "Script: [$SCRIPT_NUM] ::: Installing important packages"
 
   local APPARMOR
@@ -50,5 +50,5 @@ function f_package_remove {
     apt-get --purge "$deb_remove" -y
   done
 
-
+ ((SCRIPT_NUM++))
 }
