@@ -1,0 +1,60 @@
+[HARDENING LOG - focal - Sun Nov 13 19:28:55 UTC 2022]
+[HARDENING LOG - focal - Sun Nov 13 19:29:46 UTC 2022]
+[HARDENING LOG - focal - Sun Nov 13 19:33:04 UTC 2022]
+[HARDENING LOG - focal - Sun Nov 13 19:33:40 UTC 2022]
+[HARDENING LOG - focal - Sun Nov 13 19:33:43 UTC 2022]
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following package was automatically installed and is no longer required:
+  ssl-cert
+Use 'sudo apt autoremove' to remove it.
+The following additional packages will be installed:
+  clamav-base clamav-freshclam libclamav9 libjson-c5 libssl3 libtfm1
+Suggested packages:
+  libclamunrar clamav-docs libclamunrar9
+The following NEW packages will be installed:
+  clamav clamav-base clamav-freshclam libclamav9 libjson-c5 libssl3 libtfm1
+0 upgraded, 7 newly installed, 0 to remove and 548 not upgraded.
+Need to get 3161 kB of archives.
+After this operation, 9939 kB of additional disk space will be used.
+Do you want to continue? [Y/n] [HARDENING LOG - focal - Sun Nov 13 19:34:31 UTC 2022]
+[HARDENING LOG - focal - Sun Nov 13 19:36:02 UTC 2022]
+Script: [1]  ::: Script has root privileges. Continuing
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following package was automatically installed and is no longer required:
+  ssl-cert
+Use 'sudo apt autoremove' to remove it.
+The following packages will be upgraded:
+  ufw
+1 upgraded, 0 newly installed, 0 to remove and 547 not upgraded.
+Need to get 162 kB of archives.
+After this operation, 1024 B of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu jammy/main amd64 ufw all 0.36.1-4build1 [162 kB]
+Preconfiguring packages ...
+Fetched 162 kB in 1s (201 kB/s)
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 63691 files and directories currently installed.)
+Preparing to unpack .../ufw_0.36.1-4build1_all.deb ...
+Unpacking ufw (0.36.1-4build1) over (0.36-6ubuntu1) ...
+Setting up ufw (0.36.1-4build1) ...
+Installing new version of config file /etc/logrotate.d/ufw ...
+Processing triggers for man-db (2.9.1-1) ...
+Processing triggers for rsyslog (8.2001.0-1ubuntu1.3) ...
+Processing triggers for systemd (245.4-4ubuntu3.18) ...
+Script: [2] ::: Editing rules for UFW
+Firewall is active and enabled on system startup
+Rule added
+Rule added (v6)
+Rule added
+Rule added (v6)
+Logging enabled
+Firewall reloaded
+Script: [2] ::: UFW not verbose
+Script: [3] ::: Disabling all bad network protocols.
+Script: [3] ::: Disabling "dccp sctp rds tipc
+Script: [4] ::: Disable old file systems
+Script: [5] ::: Editing Systemd config to have most secure settings
+Script: [5] ::: Reloading systemctl daemon
+Script: [6] ::: Systemd/timesyncd.conf
