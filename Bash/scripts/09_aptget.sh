@@ -224,6 +224,44 @@ function f_aptget_clean {
     $APT purge "$deb_clean"
   done
 
+  # Remove Hacking Tools
+
+dpkg --get-selections | grep john
+
+dpkg --get-selections | grep crack
+# NOTE: CRACKLIB IS GOOD
+
+dpkg --get-selections | grep -i hydra
+
+dpkg --get-selections | grep weplab
+
+dpkg --get-selections | grep pyrit
+sudo apt-get purge qbittorrent 
+sudo apt-get purge utorrent 
+sudo apt-get purge ctorrent 
+sudo apt-get purge ktorrent 
+sudo apt-get purge rtorrent 
+sudo apt-get purge deluge 
+sudo apt-get purge transmission-gtk
+sudo apt-get purge transmission-common 
+sudo apt-get purge tixati 
+sudo apt-get purge frostwise 
+sudo apt-get purge vuze 
+sudo apt-get purge irssi
+sudo apt-get purge talk 
+sudo apt-get purge telnet
+	#Remove pentesting
+sudo apt-get purge wireshark 
+sudo apt-get purge nmap 
+sudo apt-get purge john 
+sudo apt-get purge netcat 
+sudo apt-get purge netcat-openbsd 
+sudo apt-get purge netcat-traditional 
+sudo apt-get purge netcat-ubuntu 
+sudo apt-get purge netcat-minimal
+	#cleanup	 
+sudo apt-get autoremove
+
 }
 
 function f_aptget_configure {

@@ -30,5 +30,11 @@ function f_password {
     sed -i 's/pam_lastlog.so.*/pam_lastlog.so showfailed/' "$PAMLOGIN"
     sed -i 's/delay=.*/delay=4000000/' "$PAMLOGIN"
 
+  sed -i 's/auth\trequisite\t\t\tpam_deny.so\+/auth\trequired\t\t\tpam_deny.so/' /etc/pam.d/common-auth
+	        sed -i '$a auth\trequired\t\t\tpam_tally2.so deny=5 unlock_time=1800 onerr=fail' /etc/pam.d/common-auth
+	        sed -i 's/sha512\+/sha512 remember=13/' /etc/pam.d/common-password
+  hUSER=`cut -d: -f1,3 /etc/passwd | egrep ':[0]{1}$' | cut -d: -f1`
+	echo "$hUSER is a hidden user"
 
+  wait
 }

@@ -1,22 +1,5 @@
 #! /bin/bash
-
-
-if ! ps -p $$ | grep -si bash; then
-    echo "Please run with bash. If not possible, this script cannot run"
-    exit 1
-fi
-
-if ! [ -x "$(command -v systemctl)" ]; then
-    echo "Systemctl is needed to run this script. Exiting."
-    exit 1
-fi
-
 function main {
-
-    ARPLOCATION="$(command -v arp)"
-    WLOCATION="$(command -v w)"
-    SERVERIP="$(ip route | grep '^default' | awk '{print $9}')"
-
     source ./linux-ubuntu.cfg
 
     readonly USERNAMES
@@ -61,11 +44,12 @@ function main {
     readonly ARPLOCATION
     readonly WLOCATION
     readonly SERVERIP
+    readonly VSFTPDCONF
 
     for s in ./scripts/[0-9_]*; do
-    [[ -f $s ]] || break
+        [[ -f $s ]] || break
 
-    source "$s"
+        source "$s"
     done
 
     
@@ -91,6 +75,7 @@ function main {
     f_password
     f_resolvedconf
     f_ctrlaltdel
+
     read -p "Configure ssh? [y/n]: " a
 		if [ $a = y ]
 		then
@@ -106,12 +91,14 @@ function main {
         else
             break;
         fi
+
     f_cron
     f_auditd
     f_disablemod
     f_rhosts
     f_users
     f_rkhunter
+    f_clamav
     f_apport
     f_lockroot
     f_postfix
