@@ -10,7 +10,7 @@ function f_sysctl {
   sysctl -w fs.protected_hardlinks=1
   sysctl -w fs.protected_symlinks=1
   sysctl -w fs.suid_dumpable=0
-  sysctl -w sysctl -w kernel.core_uses_pid=1
+  sysctl -w kernel.core_uses_pid=1
   sysctl -w kernel.dmesg_restrict=1
   sysctl -w kernel.kptr_restrict=2
   sysctl -w kernel.panic=60
@@ -62,9 +62,10 @@ function f_sysctl {
   sysctl -w net.ipv6.conf.default.router_solicitations=0
   sysctl -w net.ipv6.conf.default.use_tempaddr=2
   sysctl -w net.ipv6.conf.eth0.accept_ra_rtr_pref=0
-  sysctl -w net.sysctl -w netfilter.nf_conntrack_max=2000000
-  sysctl -w net.sysctl -w netfilter.nf_conntrack_tcp_loose=0
-  
+  sysctl -w net.filter.nf_conntrack_max=2000000
+  sysctl -w net.filter.nf_conntrack_tcp_loose=0
+  sysctl -w kernel.panic=10
+  sysctl -w kernel.modules_disabled=1  
   chmod 0600 "$SYSCTL"
   systemctl restart systemd-sysctl
 

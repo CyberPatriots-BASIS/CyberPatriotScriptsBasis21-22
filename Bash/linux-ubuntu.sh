@@ -97,6 +97,7 @@ function main {
     f_disablemod
     f_rhosts
     f_users
+    f_servicedisable
     f_rkhunter
     f_clamav
     f_apport
