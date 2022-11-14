@@ -5346,4 +5346,52 @@ The following NEW packages will be installed:
 0 upgraded, 2 newly installed, 0 to remove and 0 not upgraded.
 Need to get 250 kB of archives.
 After this operation, 1130 kB of additional disk space will be used.
-Do you want to continue? [Y/n] 
+Do you want to continue? [Y/n] Get:1 http://archive.ubuntu.com/ubuntu jammy/main amd64 wamerican all 2020.12.07-2 [236 kB]
+Get:2 http://archive.ubuntu.com/ubuntu jammy/main amd64 libpam-cracklib amd64 1.4.0-11ubuntu2 [13.5 kB]
+Preconfiguring packages ...
+Fetched 250 kB in 1s (397 kB/s)
+Selecting previously unselected package wamerican.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 94426 files and directories currently installed.)
+Preparing to unpack .../wamerican_2020.12.07-2_all.deb ...
+Unpacking wamerican (2020.12.07-2) ...
+Selecting previously unselected package libpam-cracklib:amd64.
+Preparing to unpack .../libpam-cracklib_1.4.0-11ubuntu2_amd64.deb ...
+Unpacking libpam-cracklib:amd64 (1.4.0-11ubuntu2) ...
+Setting up wamerican (2020.12.07-2) ...
+Setting up libpam-cracklib:amd64 (1.4.0-11ubuntu2) ...
+
+pam-auth-update: Local modifications to /etc/pam.d/common-*, not updating.
+pam-auth-update: Run pam-auth-update --force to override.
+
+Processing triggers for man-db (2.10.2-1) ...
+Processing triggers for cracklib-runtime (2.9.6-3.4build4) ...
+NEEDRESTART-VER: 3.5
+NEEDRESTART-KCUR: 5.4.0-131-generic
+NEEDRESTART-KEXP: 5.15.0-52-generic
+NEEDRESTART-KSTA: 3
+NEEDRESTART-SVC: dbus.service
+NEEDRESTART-SVC: getty@tty1.service
+NEEDRESTART-SVC: irqbalance.service
+NEEDRESTART-SVC: networkd-dispatcher.service
+NEEDRESTART-SVC: polkit.service
+NEEDRESTART-SVC: serial-getty@ttyS0.service
+NEEDRESTART-SVC: systemd-journald.service
+NEEDRESTART-SVC: systemd-logind.service
+NEEDRESTART-SVC: systemd-manager
+NEEDRESTART-SVC: systemd-networkd.service
+NEEDRESTART-SVC: systemd-resolved.service
+NEEDRESTART-SVC: unattended-upgrades.service
+NEEDRESTART-SESS: vagrant @ session #3
+NEEDRESTART-SESS: vagrant @ user manager service
+password	requisite			pam_pwquality.so retry=3
+[ i ] Disabling core dumps...
+root is a hidden user
+[] Systemd/resolved.conf
+Script: [18] ::: Disabling Ctrl-alt-delete
+Script: [19] ::: Securing /etc/ssh/ssh_config
+Script: [20] ::: Configuring /etc/ssh/sshd_config to be as secure as possible.
+Script: [20]: Configuring /etc/vsftpd.conf to be as secure as possible
+Script: [21] ::: Securing /etc/cron and /etc/at
+Script: [22] ::: Running Auditd
+Script: [23] ::: Disable misc kernel modules
+Script: [24] ::: Editing .rhosts
