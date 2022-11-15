@@ -1,4 +1,5 @@
 #! /bin/bash
+
 function main {
     source ./linux-ubuntu.cfg
 
@@ -116,4 +117,12 @@ function main {
 LOGFILE="hardening-$(hostname --short)-$(date +%y%m%d).log"
 echo "[HARDENING LOG - $(hostname --fqdn) - $(LANG=C date)]" >> "$LOGFILE"
 
+sudo apt update
+sudo apt install dos2unix
+dos2unix ./linux_ubuntu.sh
+dos2unix linux_ubuntu.cfg
+for f in ./scripts/*.sh
+do
+    dos2unix $f
+done
 main "$@" | tee -a "$LOGFILE"

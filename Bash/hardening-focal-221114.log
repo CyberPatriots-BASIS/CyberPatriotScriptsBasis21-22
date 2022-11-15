@@ -1,0 +1,248 @@
+[HARDENING LOG - focal - Mon Nov 14 20:35:44 UTC 2022]
+[HARDENING LOG - focal - Mon Nov 14 20:41:41 UTC 2022]
+Script: [0]  ::: Script has root privileges. Continuing
+Reading package lists...
+Building dependency tree...
+Reading state information...
+ufw is already the newest version (0.36-6ubuntu1).
+ufw set to manually installed.
+0 upgraded, 0 newly installed, 0 to remove and 6 not upgraded.
+Script: [1] ::: Editing rules for UFW
+Firewall is active and enabled on system startup
+Rule added
+Rule added (v6)
+Rule added
+Rule added (v6)
+Logging enabled
+Firewall reloaded
+[HARDENING LOG - focal - Mon Nov 14 20:42:10 UTC 2022]
+Script: [0]  ::: Script has root privileges. Continuing
+Reading package lists...
+Building dependency tree...
+Reading state information...
+ufw is already the newest version (0.36-6ubuntu1).
+0 upgraded, 0 newly installed, 0 to remove and 6 not upgraded.
+Script: [1] ::: Editing rules for UFW
+Firewall is active and enabled on system startup
+Skipping adding existing rule
+Skipping adding existing rule (v6)
+Skipping adding existing rule
+Skipping adding existing rule (v6)
+[HARDENING LOG - focal - Mon Nov 14 20:42:28 UTC 2022]
+Script: [0]  ::: Script has root privileges. Continuing
+Reading package lists...
+Building dependency tree...
+Reading state information...
+ufw is already the newest version (0.36-6ubuntu1).
+0 upgraded, 0 newly installed, 0 to remove and 6 not upgraded.
+Script: [1] ::: Editing rules for UFW
+Firewall is active and enabled on system startup
+Skipping adding existing rule
+Skipping adding existing rule (v6)
+Skipping adding existing rule
+Skipping adding existing rule (v6)
+Logging enabled
+Firewall reloaded
+[HARDENING LOG - focal - Mon Nov 14 20:42:45 UTC 2022]
+Script: [0]  ::: Script has root privileges. Continuing
+Reading package lists...
+Building dependency tree...
+Reading state information...
+ufw is already the newest version (0.36-6ubuntu1).
+0 upgraded, 0 newly installed, 0 to remove and 6 not upgraded.
+Script: [1] ::: Editing rules for UFW
+Firewall is active and enabled on system startup
+Skipping adding existing rule
+Skipping adding existing rule (v6)
+Skipping adding existing rule
+Skipping adding existing rule (v6)
+Logging enabled
+Firewall reloaded
+Script: [1] ::: UFW not verbose
+Script: [2] ::: Disabling all bad network protocols.
+Script: [2] ::: Disabling "dccp sctp rds tipc"
+Script: [3] ::: Disable old file systems
+Script: [5] ::: Editing Systemd config to have most secure settings
+Script: [5] ::: Reloading systemctl daemon
+Script: [6] ::: Systemd/timesyncd.conf
+Script: [7] ::: Prelink
+Script: [8] ::: Updating the package index files from their sources
+Hit:1 http://security.ubuntu.com/ubuntu focal-security InRelease
+Hit:2 http://archive.ubuntu.com/ubuntu focal InRelease
+Hit:3 http://archive.ubuntu.com/ubuntu focal-updates InRelease
+Hit:4 http://archive.ubuntu.com/ubuntu focal-backports InRelease
+Reading package lists...
+Apache is not installed
+John The Ripper has not been found on the system
+Hydra has not been found.
+NGINX has not been found
+Samba has not been found.
+DNS not found.
+FTP has not been found.
+TFTPD not found.
+VNC not found.
+NFS has not been found.
+SNMP has not been found.
+Mail servers have not been located.
+XINETD has not been found.
+Script: [8] ::: Upgrading installed packages
+Hit:1 http://archive.ubuntu.com/ubuntu focal InRelease
+Hit:2 http://security.ubuntu.com/ubuntu focal-security InRelease
+Hit:3 http://archive.ubuntu.com/ubuntu focal-updates InRelease
+Hit:4 http://archive.ubuntu.com/ubuntu focal-backports InRelease
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Calculating upgrade...
+The following packages will be upgraded:
+  distro-info-data libntfs-3g883 libsqlite3-0 ntfs-3g tzdata
+  ubuntu-advantage-tools
+6 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+4 standard LTS security updates
+Need to get 1538 kB of archives.
+After this operation, 23.6 kB disk space will be freed.
+Do you want to continue? [Y/n] [HARDENING LOG - focal - Mon Nov 14 20:51:10 UTC 2022]
+Script: [0]  ::: Script has root privileges. Continuing
+Reading package lists...
+Building dependency tree...
+Reading state information...
+ufw is already the newest version (0.36-6ubuntu1).
+0 upgraded, 0 newly installed, 0 to remove and 6 not upgraded.
+Script: [1] ::: Editing rules for UFW
+Firewall is active and enabled on system startup
+Skipping adding existing rule
+Skipping adding existing rule (v6)
+Skipping adding existing rule
+Skipping adding existing rule (v6)
+Logging enabled
+Firewall reloaded
+Status: active
+Logging: on (low)
+Default: deny (incoming), allow (outgoing), disabled (routed)
+New profiles: skip
+
+To                         Action      From
+--                         ------      ----
+Anywhere on lo             ALLOW IN    Anywhere                  
+Anywhere (v6) on lo        ALLOW IN    Anywhere (v6)             
+
+Anywhere                   ALLOW OUT   Anywhere on lo            
+Anywhere (v6)              ALLOW OUT   Anywhere (v6) on lo       
+
+Script: [2] ::: Disabling all bad network protocols.
+Script: [2] ::: Disabling "dccp sctp rds tipc"
+Script: [3] ::: Disable old file systems
+Script: [5] ::: Editing Systemd config to have most secure settings
+Script: [5] ::: Reloading systemctl daemon
+Script: [6] ::: Systemd/timesyncd.conf
+[HARDENING LOG - focal - Mon Nov 14 20:52:17 UTC 2022]
+Script: [0]  ::: Script has root privileges. Continuing
+Reading package lists...
+Building dependency tree...
+Reading state information...
+ufw is already the newest version (0.36-6ubuntu1).
+0 upgraded, 0 newly installed, 0 to remove and 6 not upgraded.
+Script: [1] ::: Editing rules for UFW
+Firewall is active and enabled on system startup
+Skipping adding existing rule
+Skipping adding existing rule (v6)
+Skipping adding existing rule
+Skipping adding existing rule (v6)
+Logging enabled
+Firewall reloaded
+Status: active
+Logging: on (low)
+Default: deny (incoming), allow (outgoing), disabled (routed)
+New profiles: skip
+
+To                         Action      From
+--                         ------      ----
+Anywhere on lo             ALLOW IN    Anywhere                  
+Anywhere (v6) on lo        ALLOW IN    Anywhere (v6)             
+
+Anywhere                   ALLOW OUT   Anywhere on lo            
+Anywhere (v6)              ALLOW OUT   Anywhere (v6) on lo       
+
+Script: [2] ::: Disabling all bad network protocols.
+Script: [2] ::: Disabling "dccp sctp rds tipc"
+Script: [3] ::: Disable old file systems
+Script: [5] ::: Editing Systemd config to have most secure settings
+Script: [5] ::: Reloading systemctl daemon
+Script: [6] ::: Systemd/timesyncd.conf
+time.cloudflare.com has latency < 50
+time.cloudflare.com has latency < 50
+[HARDENING LOG - focal - Mon Nov 14 20:53:10 UTC 2022]
+Script: [0]  ::: Script has root privileges. Continuing
+Reading package lists...
+Building dependency tree...
+Reading state information...
+ufw is already the newest version (0.36-6ubuntu1).
+0 upgraded, 0 newly installed, 0 to remove and 6 not upgraded.
+Script: [1] ::: Editing rules for UFW
+Firewall is active and enabled on system startup
+Skipping adding existing rule
+Skipping adding existing rule (v6)
+Skipping adding existing rule
+Skipping adding existing rule (v6)
+Logging enabled
+Firewall reloaded
+Status: active
+Logging: on (low)
+Default: deny (incoming), allow (outgoing), disabled (routed)
+New profiles: skip
+
+To                         Action      From
+--                         ------      ----
+Anywhere on lo             ALLOW IN    Anywhere                  
+Anywhere (v6) on lo        ALLOW IN    Anywhere (v6)             
+
+Anywhere                   ALLOW OUT   Anywhere on lo            
+Anywhere (v6)              ALLOW OUT   Anywhere (v6) on lo       
+
+Script: [2] ::: Disabling all bad network protocols.
+Script: [2] ::: Disabling "dccp sctp rds tipc"
+Script: [3] ::: Disable old file systems
+Script: [5] ::: Editing Systemd config to have most secure settings
+Script: [5] ::: Reloading systemctl daemon
+Script: [6] ::: Systemd/timesyncd.conf
+time.cloudflare.com has latency < 50
+time.cloudflare.com has latency < 50
+Script: [7] ::: Prelink
+Script: [8] ::: Updating the package index files from their sources
+Hit:1 http://security.ubuntu.com/ubuntu focal-security InRelease
+Hit:2 http://archive.ubuntu.com/ubuntu focal InRelease
+Hit:3 http://archive.ubuntu.com/ubuntu focal-updates InRelease
+Hit:4 http://archive.ubuntu.com/ubuntu focal-backports InRelease
+Reading package lists...
+Apache is not installed
+John The Ripper has not been found on the system
+Hydra has not been found.
+NGINX has not been found
+Samba has not been found.
+DNS not found.
+FTP has not been found.
+TFTPD not found.
+VNC not found.
+NFS has not been found.
+SNMP has not been found.
+Mail servers have not been located.
+XINETD has not been found.
+Script: [8] ::: Upgrading installed packages
+Hit:1 http://archive.ubuntu.com/ubuntu focal InRelease
+Hit:2 http://archive.ubuntu.com/ubuntu focal-updates InRelease
+Hit:3 http://archive.ubuntu.com/ubuntu focal-backports InRelease
+Hit:4 http://security.ubuntu.com/ubuntu focal-security InRelease
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Calculating upgrade...
+The following packages will be upgraded:
+  distro-info-data libntfs-3g883 libsqlite3-0 ntfs-3g tzdata
+  ubuntu-advantage-tools
+6 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+4 standard LTS security updates
+Need to get 1538 kB of archives.
+After this operation, 23.6 kB disk space will be freed.
+Do you want to continue? [Y/n] 
