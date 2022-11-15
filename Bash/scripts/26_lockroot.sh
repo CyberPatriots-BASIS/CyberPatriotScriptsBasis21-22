@@ -4,7 +4,6 @@ function f_lockroot {
   
   echo "Script: [$SCRIPT_NUM] ::: Lock root account"
 
-  usermod -L root
-  passwd -l root
+  usermod -s /sbin/nologin root
   ((SCRIPT_NUM++))
 }

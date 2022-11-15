@@ -12,6 +12,14 @@ function f_password {
     cp ./config/pwquality.conf /etc/security/pwquality.conf
     chmod 0644 /etc/security/pwquality.conf
 
+    usrInfo=$(awk -F: '{if ($3 >= 1000) print $1}' < /etc/passwd)
+
+    for u in usrInfo
+    do
+      chage -m 7 $u
+      chage -M 60 $u
+    done
+    
     sed -i 's/try_first_pass sha512.*/try_first_pass sha512 rounds=65536/' "$COMMONPASSWD"
     sed -i 's/nullok_secure//' "$COMMONAUTH"
 
@@ -28,7 +36,7 @@ function f_password {
     fi
 
     echo -e "[ i ] Disabling core dumps..."
-    cp limits.conf /etc/security/limits.conf
+    cp ./config/limits.conf /etc/security/limits.conf
     overwrite "${YES} Disabled core dumps"
 
     sed -i 's/pam_lastlog.so.*/pam_lastlog.so showfailed/' "$PAMLOGIN"
