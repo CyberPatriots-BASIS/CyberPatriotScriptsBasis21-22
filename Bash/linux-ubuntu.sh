@@ -115,7 +115,7 @@ function main {
 }
 
 LOGFILE="hardening-$(hostname --short)-$(date +%y%m%d).log"
-echo "[HARDENING LOG - $(hostname --fqdn) - $(LANG=C date)]" >> "$LOGFILE"
+echo "[HARDENING LOG - $(hostname --fqdn) - $(date +"%d-%t-%y-%T")]" >> "$LOGFILE"
 
 sudo apt update
 sudo apt install dos2unix
