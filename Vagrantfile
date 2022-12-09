@@ -1,6 +1,6 @@
 Vagrant.configure("2") do |config|
   config.vm.provider "virtualbox" do |v|
-    v.default_nic_type = "Am79C973"
+    v.default_nic_type = "82540EM"
     v.memory = 2048
     v.cpus = 2
     v.customize ["modifyvm", :id, "--uart1", "0x3F8", "4"]
@@ -14,20 +14,9 @@ Vagrant.configure("2") do |config|
     focal.vm.box = "ubuntu/focal64"
     focal.vm.hostname = "focal"
   end
-
-  config.vm.define "jammy" do |jammy|
-    jammy.ssh.extra_args = ["-o","ConnectTimeout=600"]
-    jammy.ssh.insert_key = true
-    jammy.vm.boot_timeout = 600
-    jammy.vm.box = "ubuntu/jammy64"
-    jammy.vm.hostname = "jammy"
-  end
-
-  config.vm.define "kinetic" do |kinetic|
-    kinetic.ssh.extra_args = ["-o","ConnectTimeout=600"]
-    kinetic.ssh.insert_key = true
-    kinetic.vm.boot_timeout = 600
-    kinetic.vm.box = "ubuntu/kinetic64"
-    kinetic.vm.hostname = "kinetic"
+  
+  config.vm.provider :virtualbox do |v|
+    v.customize ["modifyvm", :id, "--uart1", "0x3F8", "4"]
+    v.customize ["modifyvm", :id, "--uartmode1", "file", File::NULL]
   end
 end

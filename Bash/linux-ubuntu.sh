@@ -92,6 +92,13 @@ function main {
         else
             break;
         fi
+    read -p "Configure HTTP? [y/n]: " c
+    	if [ $c = y ]
+	    then
+	        echo -c "Must be implemented"
+	    else
+	        break;
+	    fi
 
     f_cron
     f_auditd
