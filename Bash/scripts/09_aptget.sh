@@ -4,7 +4,7 @@ function f_aptget {
   
   echo "Script: [$SCRIPT_NUM] ::: Updating the package index files from their sources"
 
-  apt-get update
+  apt update
 
   ##CHANGE TO GREP -i
         echo "$LogTime uss: [$UserName]# Removing hacking tools..." >> output.log
@@ -15,7 +15,7 @@ function f_aptget {
                        	read -p "Do you want apache installed on the system[y/n]: "
         	        if [ $a = n ];
         	        then
-      	        	        apt-get autoremove -y --purge apache2 >> output.log
+      	        	        apt -y purge apache2 >> output.log
 			else
             		if [ -e /etc/apache2/apache2.conf ]
 				then
@@ -28,7 +28,7 @@ function f_aptget {
 					echo UserDir disabled root >> /etc/apache2/apache2.conf
 				else
 					##Installs and configures apache
-					apt-get install apache2 -y
+					apt install apache2 -y
 						chown -R root:root /etc/apache2
 						chown -R root:root /etc/apache
 						echo \<Directory \> >> /etc/apache2/apache2.conf
@@ -38,10 +38,10 @@ function f_aptget {
 						echo UserDir disabled root >> /etc/apache2/apache2.conf
 
 					##Installs and configures sql
-					apt-get install mysql-server -y
+					apt install mysql-server -y
 
 					##Installs and configures php5
-					apt-get install php5 -y
+					apt install php5 -y
 					chmod 640 /etc/php5/apache2/php.ini
 				fi
         	fi
@@ -54,7 +54,7 @@ function f_aptget {
 	        if [ $? -eq 0 ];
 	        then
         	        echo "JOHN HAS BEEEN FOUND! DIE DIE DIE"
-        	        apt-get autoremove -y --purge john >> output.log
+        	        apt -y purge john >> output.log
         	        echo "John has been ripped"
 			sleep 1
 	        else
@@ -66,7 +66,7 @@ function f_aptget {
 	if [ $? -eq 0 ];
 	then
 		echo "HEIL HYDRA"
-		apt-get autoremove -y --purge hydra >> output.log
+		apt -y purge hydra >> output.log
 	else
 		echo "Hydra has not been found."
 	fi
@@ -75,7 +75,7 @@ function f_aptget {
 	if [ $? -eq 0 ];
 	then
         	echo "NGINX HAS BEEN FOUND! OHHHH NOOOOOO!"
-        	apt-get autoremove -y --purge nginx >> output.log
+        	apt -y purge nginx >> output.log
 	else
         	echo "NGINX has not been found"
 			sleep 1
@@ -87,8 +87,8 @@ function f_aptget {
 		if [ $a = y ];
 		then
         echo "$LogTime uss: [$UserName]# Uninstalling samba..." >> output.log
-			sudo apt-get autoremove --purge -y samba >> output.log
-			sudo apt-get autoremove --purge -y samba >> output.log
+			sudo apt purge -y samba >> output.log
+			sudo apt purge -y samba >> output.log
         echo "$LogTime uss: [$UserName]# Samba has been removed." >> output.log
 		else
 			sed -i '82 i\restrict anonymous = 2' /etc/samba/smb.conf
@@ -104,7 +104,7 @@ function f_aptget {
 		read -p "DNS server is running would you like to shut it down?[y/n]: " a
 		if [ $a = y ];
 		then
-			apt-get autoremove -y --purge bind9 
+			purge -y purge bind9 
 		fi
 	else
 		echo "DNS not found."
@@ -120,7 +120,7 @@ function f_aptget {
 			PID = `pgrep vsftpd`
 			sed -i 's/^/#/' /etc/vsftpd.conf
 			kill $PID
-			apt-get autoremove -y --purge vsftpd ftp
+			apt -y purge vsftpd ftp
 		else
 			sed -i 's/anonymous_enable=.*/anonymous_enable=NO/' /etc/vsftpd.conf
 			sed -i 's/local_enable=.*/local_enable=YES/' /etc/vsftpd.conf
@@ -138,7 +138,7 @@ function f_aptget {
 		read -p "TFTPD has been installed, would you like to remove it?[y/n]: " a
 		if [ $a = y ]
 		then
-			apt-get autoremove -y --purge tftpd
+			apt -y purge tftpd
 		fi
 	else
 		echo "TFTPD not found."
@@ -151,7 +151,7 @@ function f_aptget {
 		read -p "VNC has been installed, would you like to remove it?[y/n]: " a
 		if [ $a = y ]
 		then
-			apt-get autoremove -y --purge x11vnc tightvncserver 
+			apt -y purge x11vnc tightvncserver 
 		##else
 			##Configure VNC
 		fi
@@ -167,7 +167,7 @@ function f_aptget {
 		read -p "NFS has been found, would you like to remove it?[y/n]: " a
 		if [ $a = 0 ]
 		then
-			apt-get autoremove -y --purge nfs-kernel-server
+			apt -y purge nfs-kernel-server
 		##else
 			##Configure NFS
 		fi
@@ -180,7 +180,7 @@ function f_aptget {
 	if [ $? -eq 0 ]
 	then	
 		echo "SNMP HAS BEEN LOCATED!"
-		apt-get autoremove -y --purge snmp
+		apt -y purge snmp
 	else
 		echo "SNMP has not been found."
 		sleep 1
@@ -190,7 +190,7 @@ function f_aptget {
 	if [ $? -eq 0 ]
 	then
 		echo "Mail servers have been found."
-		apt-get autoremove -y --purge postfix sendmail
+		apt -y purge postfix sendmail
 	else
 		echo "Mail servers have not been located."
 		sleep 1
@@ -200,7 +200,7 @@ function f_aptget {
 	if [ $? -eq 0 ]
 	then
 		echo "XINIT HAS BEEN FOUND!"
-		apt-get autoremove -y --purge xinetd
+		apt -y purge xinetd
 	else
 		echo "XINETD has not been found."
 		sleep 1
@@ -209,7 +209,7 @@ function f_aptget {
 
   echo "Script: [$SCRIPT_NUM] ::: Upgrading installed packages"
 
-  apt-get update && apt-get upgrade && apt-get dist-upgrade
+  apt update && apt upgrade && apt dist-upgrade
 
 }
 
@@ -217,8 +217,8 @@ function f_aptget_clean {
   
   echo "Script: [$SCRIPT_NUM] ::: Removing unused packages"
 
-  apt-get clean
-  apt-get autoremove
+  apt clean
+  apt
 
   for deb_clean in $(dpkg -l | grep '^rc' | awk '{print $2}'); do
     $APT purge "$deb_clean"
@@ -237,31 +237,31 @@ dpkg --get-selections | grep -i hydra
 dpkg --get-selections | grep weplab
 
 dpkg --get-selections | grep pyrit
-sudo apt-get purge qbittorrent 
-sudo apt-get purge utorrent 
-sudo apt-get purge ctorrent 
-sudo apt-get purge ktorrent 
-sudo apt-get purge rtorrent 
-sudo apt-get purge deluge 
-sudo apt-get purge transmission-gtk
-sudo apt-get purge transmission-common 
-sudo apt-get purge tixati 
-sudo apt-get purge frostwise 
-sudo apt-get purge vuze 
-sudo apt-get purge irssi
-sudo apt-get purge talk 
-sudo apt-get purge telnet
+sudo apt purge qbittorrent 
+sudo apt purge utorrent 
+sudo apt purge ctorrent 
+sudo apt purge ktorrent 
+sudo apt purge rtorrent 
+sudo apt purge deluge 
+sudo apt purge transmission-gtk
+sudo apt purge transmission-common 
+sudo apt purge tixati 
+sudo apt purge frostwise 
+sudo apt purge vuze 
+sudo apt purge irssi
+sudo apt purge talk 
+sudo apt purge telnet
 	#Remove pentesting
-sudo apt-get purge wireshark 
-sudo apt-get purge nmap 
-sudo apt-get purge john 
-sudo apt-get purge netcat 
-sudo apt-get purge netcat-openbsd 
-sudo apt-get purge netcat-traditional 
-sudo apt-get purge netcat-ubuntu 
-sudo apt-get purge netcat-minimal
+sudo apt purge wireshark 
+sudo apt purge nmap 
+sudo apt purge john 
+sudo apt purge netcat 
+sudo apt purge netcat-openbsd 
+sudo apt purge netcat-traditional 
+sudo apt purge netcat-ubuntu 
+sudo apt purge netcat-minimal
 	#cleanup	 
-sudo apt-get autoremove
+sudo apt
 
 }
 

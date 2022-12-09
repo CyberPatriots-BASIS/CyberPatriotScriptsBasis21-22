@@ -1,0 +1,1771 @@
+[HARDENING LOG - focal - 07-	-22-14:29:55]
+[HARDENING LOG - focal - 07-	-22-14:31:01]
+Script: [0]  ::: Script has root privileges. Continuing
+Reading package lists...
+Building dependency tree...
+Reading state information...
+ufw is already the newest version (0.36-6ubuntu1).
+ufw set to manually installed.
+0 upgraded, 0 newly installed, 0 to remove and 30 not upgraded.
+Script: [1] ::: Editing rules for UFW
+Firewall is active and enabled on system startup
+Rule added
+Rule added (v6)
+Rule added
+Rule added (v6)
+Logging enabled
+Firewall reloaded
+Status: active
+Logging: on (low)
+Default: deny (incoming), allow (outgoing), disabled (routed)
+New profiles: skip
+
+To                         Action      From
+--                         ------      ----
+Anywhere on lo             ALLOW IN    Anywhere                  
+Anywhere (v6) on lo        ALLOW IN    Anywhere (v6)             
+
+Anywhere                   ALLOW OUT   Anywhere on lo            
+Anywhere (v6)              ALLOW OUT   Anywhere (v6) on lo       
+
+Script: [2] ::: Disabling all bad network protocols.
+Script: [2] ::: Disabling "dccp sctp rds tipc"
+Script: [3] ::: Disable old file systems
+Script: [5] ::: Editing Systemd config to have most secure settings
+Script: [5] ::: Reloading systemctl daemon
+Script: [6] ::: Systemd/timesyncd.conf
+Script: [7] ::: Prelink
+Script: [8] ::: Updating the package index files from their sources
+Hit:1 http://security.ubuntu.com/ubuntu focal-security InRelease
+Hit:2 http://archive.ubuntu.com/ubuntu focal InRelease
+Hit:3 http://archive.ubuntu.com/ubuntu focal-updates InRelease
+Hit:4 http://archive.ubuntu.com/ubuntu focal-backports InRelease
+Reading package lists...
+Building dependency tree...
+Reading state information...
+30 packages can be upgraded. Run 'apt list --upgradable' to see them.
+Apache is not installed
+John The Ripper has not been found on the system
+Hydra has not been found.
+NGINX has not been found
+Samba has not been found.
+DNS not found.
+FTP has not been found.
+TFTPD not found.
+VNC not found.
+NFS has not been found.
+SNMP has not been found.
+Mail servers have not been located.
+XINETD has not been found.
+Script: [8] ::: Upgrading installed packages
+Hit:1 http://security.ubuntu.com/ubuntu focal-security InRelease
+Hit:2 http://archive.ubuntu.com/ubuntu focal InRelease
+Hit:3 http://archive.ubuntu.com/ubuntu focal-updates InRelease
+Hit:4 http://archive.ubuntu.com/ubuntu focal-backports InRelease
+Reading package lists...
+Building dependency tree...
+Reading state information...
+30 packages can be upgraded. Run 'apt list --upgradable' to see them.
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Calculating upgrade...
+The following NEW packages will be installed:
+  linux-headers-5.4.0-135 linux-headers-5.4.0-135-generic
+  linux-image-5.4.0-135-generic linux-modules-5.4.0-135-generic
+The following packages will be upgraded:
+  apport ca-certificates cloud-init distro-info-data kpartx libexpat1
+  libnss-systemd libntfs-3g883 libpam-systemd libsqlite3-0 libsystemd0
+  libudev1 libxml2 linux-headers-generic linux-headers-virtual
+  linux-image-virtual linux-virtual login multipath-tools ntfs-3g passwd
+  python3-apport python3-problem-report snapd systemd systemd-sysv
+  systemd-timesyncd tzdata ubuntu-advantage-tools udev
+30 upgraded, 4 newly installed, 0 to remove and 0 not upgraded.
+16 standard LTS security updates
+Need to get 85.9 MB of archives.
+After this operation, 179 MB of additional disk space will be used.
+Do you want to continue? [Y/n] Get:1 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 login amd64 1:4.8.1-1ubuntu5.20.04.4 [221 kB]
+Get:2 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libnss-systemd amd64 245.4-4ubuntu3.19 [95.8 kB]
+Get:3 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 udev amd64 245.4-4ubuntu3.19 [1367 kB]
+Get:4 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libudev1 amd64 245.4-4ubuntu3.19 [75.5 kB]
+Get:5 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 systemd-sysv amd64 245.4-4ubuntu3.19 [10.3 kB]
+Get:6 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 systemd-timesyncd amd64 245.4-4ubuntu3.19 [28.1 kB]
+Get:7 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libpam-systemd amd64 245.4-4ubuntu3.19 [186 kB]
+Get:8 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 systemd amd64 245.4-4ubuntu3.19 [3812 kB]
+Get:9 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libsystemd0 amd64 245.4-4ubuntu3.19 [268 kB]
+Get:10 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 ntfs-3g amd64 1:2017.3.23AR.3-3ubuntu1.3 [388 kB]
+Get:11 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libntfs-3g883 amd64 1:2017.3.23AR.3-3ubuntu1.3 [150 kB]
+Get:12 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 passwd amd64 1:4.8.1-1ubuntu5.20.04.4 [799 kB]
+Get:13 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 ca-certificates all 20211016ubuntu0.20.04.1 [141 kB]
+Get:14 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 distro-info-data all 0.43ubuntu1.11 [4672 B]
+Get:15 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libexpat1 amd64 2.2.9-1ubuntu0.6 [74.6 kB]
+Get:16 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libsqlite3-0 amd64 3.31.1-4ubuntu0.5 [549 kB]
+Get:17 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libxml2 amd64 2.9.10+dfsg-5ubuntu0.20.04.5 [640 kB]
+Get:18 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 tzdata all 2022f-0ubuntu0.20.04.1 [285 kB]
+Get:19 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 ubuntu-advantage-tools amd64 27.12~20.04.1 [167 kB]
+Get:20 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 python3-problem-report all 2.20.11-0ubuntu27.25 [11.0 kB]
+Get:21 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 python3-apport all 2.20.11-0ubuntu27.25 [86.4 kB]
+Get:22 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 apport all 2.20.11-0ubuntu27.25 [129 kB]
+Get:23 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 linux-headers-5.4.0-135 all 5.4.0-135.152 [11.0 MB]
+Get:24 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 linux-headers-5.4.0-135-generic amd64 5.4.0-135.152 [1403 kB]
+Get:25 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 linux-modules-5.4.0-135-generic amd64 5.4.0-135.152 [15.0 MB]
+Get:26 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 linux-image-5.4.0-135-generic amd64 5.4.0-135.152 [10.5 MB]
+Get:27 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 linux-virtual amd64 5.4.0.135.133 [1876 B]
+Get:28 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 linux-image-virtual amd64 5.4.0.135.133 [2492 B]
+Get:29 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 linux-headers-virtual amd64 5.4.0.135.133 [1840 B]
+Get:30 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 linux-headers-generic amd64 5.4.0.135.133 [2388 B]
+Get:31 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 snapd amd64 2.57.5+20.04ubuntu0.1 [37.6 MB]
+Get:32 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 cloud-init all 22.4.2-0ubuntu0~20.04.1 [529 kB]
+Get:33 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 kpartx amd64 0.8.3-1ubuntu2.1 [27.8 kB]
+Get:34 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 multipath-tools amd64 0.8.3-1ubuntu2.1 [290 kB]
+Preconfiguring packages ...
+Fetched 85.9 MB in 2min 22s (606 kB/s)
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 63672 files and directories currently installed.)
+Preparing to unpack .../login_1%3a4.8.1-1ubuntu5.20.04.4_amd64.deb ...
+Unpacking login (1:4.8.1-1ubuntu5.20.04.4) over (1:4.8.1-1ubuntu5.20.04.2) ...
+Setting up login (1:4.8.1-1ubuntu5.20.04.4) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 63672 files and directories currently installed.)
+Preparing to unpack .../libnss-systemd_245.4-4ubuntu3.19_amd64.deb ...
+Unpacking libnss-systemd:amd64 (245.4-4ubuntu3.19) over (245.4-4ubuntu3.18) ...
+Preparing to unpack .../udev_245.4-4ubuntu3.19_amd64.deb ...
+Unpacking udev (245.4-4ubuntu3.19) over (245.4-4ubuntu3.18) ...
+Preparing to unpack .../libudev1_245.4-4ubuntu3.19_amd64.deb ...
+Unpacking libudev1:amd64 (245.4-4ubuntu3.19) over (245.4-4ubuntu3.18) ...
+Setting up libudev1:amd64 (245.4-4ubuntu3.19) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 63672 files and directories currently installed.)
+Preparing to unpack .../systemd-sysv_245.4-4ubuntu3.19_amd64.deb ...
+Unpacking systemd-sysv (245.4-4ubuntu3.19) over (245.4-4ubuntu3.18) ...
+Preparing to unpack .../systemd-timesyncd_245.4-4ubuntu3.19_amd64.deb ...
+Unpacking systemd-timesyncd (245.4-4ubuntu3.19) over (245.4-4ubuntu3.18) ...
+Preparing to unpack .../libpam-systemd_245.4-4ubuntu3.19_amd64.deb ...
+Unpacking libpam-systemd:amd64 (245.4-4ubuntu3.19) over (245.4-4ubuntu3.18) ...
+Preparing to unpack .../systemd_245.4-4ubuntu3.19_amd64.deb ...
+Unpacking systemd (245.4-4ubuntu3.19) over (245.4-4ubuntu3.18) ...
+Preparing to unpack .../libsystemd0_245.4-4ubuntu3.19_amd64.deb ...
+Unpacking libsystemd0:amd64 (245.4-4ubuntu3.19) over (245.4-4ubuntu3.18) ...
+Setting up libsystemd0:amd64 (245.4-4ubuntu3.19) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 63672 files and directories currently installed.)
+Preparing to unpack .../ntfs-3g_1%3a2017.3.23AR.3-3ubuntu1.3_amd64.deb ...
+Unpacking ntfs-3g (1:2017.3.23AR.3-3ubuntu1.3) over (1:2017.3.23AR.3-3ubuntu1.2) ...
+Preparing to unpack .../libntfs-3g883_1%3a2017.3.23AR.3-3ubuntu1.3_amd64.deb ...
+Unpacking libntfs-3g883 (1:2017.3.23AR.3-3ubuntu1.3) over (1:2017.3.23AR.3-3ubuntu1.2) ...
+Preparing to unpack .../passwd_1%3a4.8.1-1ubuntu5.20.04.4_amd64.deb ...
+
+Unpacking passwd (1:4.8.1-1ubuntu5.20.04.4) over (1:4.8.1-1ubuntu5.20.04.2) ...
+
+Setting up passwd (1:4.8.1-1ubuntu5.20.04.4) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 63672 files and directories currently installed.)
+Preparing to unpack .../00-ca-certificates_20211016ubuntu0.20.04.1_all.deb ...
+Unpacking ca-certificates (20211016ubuntu0.20.04.1) over (20211016~20.04.1) ...
+Preparing to unpack .../01-distro-info-data_0.43ubuntu1.11_all.deb ...
+Unpacking distro-info-data (0.43ubuntu1.11) over (0.43ubuntu1.10) ...
+Preparing to unpack .../02-libexpat1_2.2.9-1ubuntu0.6_amd64.deb ...
+Unpacking libexpat1:amd64 (2.2.9-1ubuntu0.6) over (2.2.9-1ubuntu0.4) ...
+Preparing to unpack .../03-libsqlite3-0_3.31.1-4ubuntu0.5_amd64.deb ...
+Unpacking libsqlite3-0:amd64 (3.31.1-4ubuntu0.5) over (3.31.1-4ubuntu0.4) ...
+Preparing to unpack .../04-libxml2_2.9.10+dfsg-5ubuntu0.20.04.5_amd64.deb ...
+Unpacking libxml2:amd64 (2.9.10+dfsg-5ubuntu0.20.04.5) over (2.9.10+dfsg-5ubuntu0.20.04.4) ...
+Preparing to unpack .../05-tzdata_2022f-0ubuntu0.20.04.1_all.deb ...
+Unpacking tzdata (2022f-0ubuntu0.20.04.1) over (2022e-0ubuntu0.20.04.0) ...
+
+
+
+
+
+
+
+
+Preparing to unpack .../06-ubuntu-advantage-tools_27.12~20.04.1_amd64.deb ...
+
+
+
+
+
+Unpacking ubuntu-advantage-tools (27.12~20.04.1) over (27.11.2~20.04.1) ...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Preparing to unpack .../07-python3-problem-report_2.20.11-0ubuntu27.25_all.deb ...
+
+
+Unpacking python3-problem-report (2.20.11-0ubuntu27.25) over (2.20.11-0ubuntu27.24) ...
+
+Preparing to unpack .../08-python3-apport_2.20.11-0ubuntu27.25_all.deb ...
+
+
+Unpacking python3-apport (2.20.11-0ubuntu27.25) over (2.20.11-0ubuntu27.24) ...
+
+
+Preparing to unpack .../09-apport_2.20.11-0ubuntu27.25_all.deb ...
+
+
+
+
+
+
+
+
+Unpacking apport (2.20.11-0ubuntu27.25) over (2.20.11-0ubuntu27.24) ...
+
+
+
+
+
+
+
+
+
+
+Selecting previously unselected package linux-headers-5.4.0-135.
+Preparing to unpack .../10-linux-headers-5.4.0-135_5.4.0-135.152_all.deb ...
+Unpacking linux-headers-5.4.0-135 (5.4.0-135.152) ...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Selecting previously unselected package linux-headers-5.4.0-135-generic.
+Preparing to unpack .../11-linux-headers-5.4.0-135-generic_5.4.0-135.152_amd64.deb ...
+Unpacking linux-headers-5.4.0-135-generic (5.4.0-135.152) ...
+Selecting previously unselected package linux-modules-5.4.0-135-generic.
+Preparing to unpack .../12-linux-modules-5.4.0-135-generic_5.4.0-135.152_amd64.deb ...
+Unpacking linux-modules-5.4.0-135-generic (5.4.0-135.152) ...
+Selecting previously unselected package linux-image-5.4.0-135-generic.
+Preparing to unpack .../13-linux-image-5.4.0-135-generic_5.4.0-135.152_amd64.deb ...
+Unpacking linux-image-5.4.0-135-generic (5.4.0-135.152) ...
+Preparing to unpack .../14-linux-virtual_5.4.0.135.133_amd64.deb ...
+Unpacking linux-virtual (5.4.0.135.133) over (5.4.0.131.131) ...
+Preparing to unpack .../15-linux-image-virtual_5.4.0.135.133_amd64.deb ...
+Unpacking linux-image-virtual (5.4.0.135.133) over (5.4.0.131.131) ...
+Preparing to unpack .../16-linux-headers-virtual_5.4.0.135.133_amd64.deb ...
+Unpacking linux-headers-virtual (5.4.0.135.133) over (5.4.0.131.131) ...
+Preparing to unpack .../17-linux-headers-generic_5.4.0.135.133_amd64.deb ...
+Unpacking linux-headers-generic (5.4.0.135.133) over (5.4.0.131.131) ...
+Preparing to unpack .../18-snapd_2.57.5+20.04ubuntu0.1_amd64.deb ...
+Unpacking snapd (2.57.5+20.04ubuntu0.1) over (2.57.5+20.04) ...
+Preparing to unpack .../19-cloud-init_22.4.2-0ubuntu0~20.04.1_all.deb ...
+Unpacking cloud-init (22.4.2-0ubuntu0~20.04.1) over (22.3.4-0ubuntu1~20.04.1) ...
+Preparing to unpack .../20-kpartx_0.8.3-1ubuntu2.1_amd64.deb ...
+Unpacking kpartx (0.8.3-1ubuntu2.1) over (0.8.3-1ubuntu2) ...
+Preparing to unpack .../21-multipath-tools_0.8.3-1ubuntu2.1_amd64.deb ...
+Warning: Stopping multipath-tools.service, but it can still be activated by:
+  multipathd.socket
+Unpacking multipath-tools (0.8.3-1ubuntu2.1) over (0.8.3-1ubuntu2) ...
+Setting up libexpat1:amd64 (2.2.9-1ubuntu0.6) ...
+Setting up linux-modules-5.4.0-135-generic (5.4.0-135.152) ...
+Setting up cloud-init (22.4.2-0ubuntu0~20.04.1) ...
+Installing new version of config file /etc/cloud/cloud.cfg ...
+Setting up linux-image-5.4.0-135-generic (5.4.0-135.152) ...
+I: /boot/vmlinuz is now a symlink to vmlinuz-5.4.0-135-generic
+I: /boot/initrd.img is now a symlink to initrd.img-5.4.0-135-generic
+Setting up python3-problem-report (2.20.11-0ubuntu27.25) ...
+Setting up distro-info-data (0.43ubuntu1.11) ...
+Setting up libsqlite3-0:amd64 (3.31.1-4ubuntu0.5) ...
+Setting up libntfs-3g883 (1:2017.3.23AR.3-3ubuntu1.3) ...
+Setting up ntfs-3g (1:2017.3.23AR.3-3ubuntu1.3) ...
+Setting up python3-apport (2.20.11-0ubuntu27.25) ...
+Setting up tzdata (2022f-0ubuntu0.20.04.1) ...
+
+Current default time zone: 'Etc/UTC'
+Local time is now:      Wed Dec  7 14:35:57 UTC 2022.
+Universal Time is now:  Wed Dec  7 14:35:57 UTC 2022.
+Run 'dpkg-reconfigure tzdata' if you wish to change it.
+
+Setting up ca-certificates (20211016ubuntu0.20.04.1) ...
+Updating certificates in /etc/ssl/certs...
+rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+0 added, 3 removed; done.
+Setting up udev (245.4-4ubuntu3.19) ...
+update-initramfs: deferring update (trigger activated)
+Setting up kpartx (0.8.3-1ubuntu2.1) ...
+Setting up ubuntu-advantage-tools (27.12~20.04.1) ...
+Installing new version of config file /etc/apt/apt.conf.d/20apt-esm-hook.conf ...
+Installing new version of config file /etc/ubuntu-advantage/help_data.yaml ...
+Installing new version of config file /etc/update-motd.d/91-contract-ua-esm-status ...
+Setting up linux-image-virtual (5.4.0.135.133) ...
+Setting up linux-headers-5.4.0-135 (5.4.0-135.152) ...
+Setting up libxml2:amd64 (2.9.10+dfsg-5ubuntu0.20.04.5) ...
+Setting up apport (2.20.11-0ubuntu27.25) ...
+apport-autoreport.service is a disabled or a static unit, not starting it.
+Setting up multipath-tools (0.8.3-1ubuntu2.1) ...
+Setting up linux-headers-5.4.0-135-generic (5.4.0-135.152) ...
+Setting up linux-headers-generic (5.4.0.135.133) ...
+Setting up linux-headers-virtual (5.4.0.135.133) ...
+Setting up linux-virtual (5.4.0.135.133) ...
+Setting up systemd (245.4-4ubuntu3.19) ...
+Setting up systemd-timesyncd (245.4-4ubuntu3.19) ...
+Setting up snapd (2.57.5+20.04ubuntu0.1) ...
+Installing new version of config file /etc/apparmor.d/usr.lib.snapd.snap-confine.real ...
+snapd.failure.service is a disabled or a static unit not running, not starting it.
+snapd.snap-repair.service is a disabled or a static unit not running, not starting it.
+Setting up systemd-sysv (245.4-4ubuntu3.19) ...
+Setting up libnss-systemd:amd64 (245.4-4ubuntu3.19) ...
+Setting up libpam-systemd:amd64 (245.4-4ubuntu3.19) ...
+Processing triggers for mime-support (3.64ubuntu1) ...
+Processing triggers for initramfs-tools (0.136ubuntu6.7) ...
+update-initramfs: Generating /boot/initrd.img-5.4.0-131-generic
+Processing triggers for libc-bin (2.31-0ubuntu9.9) ...
+Processing triggers for rsyslog (8.2001.0-1ubuntu1.3) ...
+Processing triggers for man-db (2.9.1-1) ...
+Processing triggers for dbus (1.12.16-2ubuntu2.3) ...
+Processing triggers for linux-image-5.4.0-135-generic (5.4.0-135.152) ...
+/etc/kernel/postinst.d/initramfs-tools:
+update-initramfs: Generating /boot/initrd.img-5.4.0-135-generic
+/etc/kernel/postinst.d/zz-update-grub:
+Sourcing file `/etc/default/grub'
+Sourcing file `/etc/default/grub.d/50-cloudimg-settings.cfg'
+Sourcing file `/etc/default/grub.d/init-select.cfg'
+Generating grub configuration file ...
+Found linux image: /boot/vmlinuz-5.4.0-135-generic
+Found initrd image: /boot/initrd.img-5.4.0-135-generic
+Found linux image: /boot/vmlinuz-5.4.0-131-generic
+Found initrd image: /boot/initrd.img-5.4.0-131-generic
+done
+Processing triggers for ca-certificates (20211016ubuntu0.20.04.1) ...
+Updating certificates in /etc/ssl/certs...
+0 added, 0 removed; done.
+Running hooks in /etc/ca-certificates/update.d...
+done.
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Calculating upgrade...
+#
+# News about significant security updates, features and services will
+# appear here to raise awareness and perhaps tease /r/Linux ;)
+# Use 'pro config set apt_news=false' to hide this and future APT news.
+#
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Script: [8] ::: Removing unused packages
+apt 2.0.9 (amd64)
+Usage: apt [options] command
+
+apt is a commandline package manager and provides commands for
+searching and managing as well as querying information about packages.
+It provides the same functionality as the specialized APT tools,
+like apt-get and apt-cache, but enables options more suitable for
+interactive use by default.
+
+Most used commands:
+  list - list packages based on package names
+  search - search in package descriptions
+  show - show package details
+  install - install packages
+  reinstall - reinstall packages
+  remove - remove packages
+  autoremove - Remove automatically all unused packages
+  update - update list of available packages
+  upgrade - upgrade the system by installing/upgrading packages
+  full-upgrade - upgrade the system by removing/installing/upgrading packages
+  edit-sources - edit the source information file
+  satisfy - satisfy dependency strings
+
+See apt(8) for more information about the available commands.
+Configuration options and syntax is detailed in apt.conf(5).
+Information about how to configure sources can be found in sources.list(5).
+Package and version choices can be expressed via apt_preferences(5).
+Security details are available in apt-secure(8).
+                                        This APT has Super Cow Powers.
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Package 'qbittorrent' is not installed, so not removed
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Reading package lists...
+Building dependency tree...
+Reading state information...
+
+No apt package "utorrent", but there is a snap with that name.
+Try "snap install utorrent"
+
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Package 'ctorrent' is not installed, so not removed
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Package 'ktorrent' is not installed, so not removed
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Package 'rtorrent' is not installed, so not removed
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Package 'deluge' is not installed, so not removed
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Package 'transmission-gtk' is not installed, so not removed
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Package 'transmission-common' is not installed, so not removed
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Package 'irssi' is not installed, so not removed
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Package 'talk' is not installed, so not removed
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following packages will be REMOVED:
+  telnet*
+0 upgraded, 0 newly installed, 1 to remove and 0 not upgraded.
+After this operation, 163 kB disk space will be freed.
+Do you want to continue? [Y/n] (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 94786 files and directories currently installed.)
+Removing telnet (0.17-41.2build1) ...
+Processing triggers for man-db (2.9.1-1) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 94777 files and directories currently installed.)
+Purging configuration files for telnet (0.17-41.2build1) ...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Package 'wireshark' is not installed, so not removed
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Package 'nmap' is not installed, so not removed
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Package 'john' is not installed, so not removed
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Package 'netcat' is not installed, so not removed
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following packages will be REMOVED:
+  netcat-openbsd* ubuntu-minimal*
+0 upgraded, 0 newly installed, 2 to remove and 0 not upgraded.
+After this operation, 163 kB disk space will be freed.
+Do you want to continue? [Y/n] (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 94777 files and directories currently installed.)
+Removing ubuntu-minimal (1.450.2) ...
+Removing netcat-openbsd (1.206-1ubuntu1) ...
+Processing triggers for man-db (2.9.1-1) ...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Package 'netcat-traditional' is not installed, so not removed
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+apt 2.0.9 (amd64)
+Usage: apt [options] command
+
+apt is a commandline package manager and provides commands for
+searching and managing as well as querying information about packages.
+It provides the same functionality as the specialized APT tools,
+like apt-get and apt-cache, but enables options more suitable for
+interactive use by default.
+
+Most used commands:
+  list - list packages based on package names
+  search - search in package descriptions
+  show - show package details
+  install - install packages
+  reinstall - reinstall packages
+  remove - remove packages
+  autoremove - Remove automatically all unused packages
+  update - update list of available packages
+  upgrade - upgrade the system by installing/upgrading packages
+  full-upgrade - upgrade the system by removing/installing/upgrading packages
+  edit-sources - edit the source information file
+  satisfy - satisfy dependency strings
+
+See apt(8) for more information about the available commands.
+Configuration options and syntax is detailed in apt.conf(5).
+Information about how to configure sources can be found in sources.list(5).
+Package and version choices can be expressed via apt_preferences(5).
+Security details are available in apt-secure(8).
+                                        This APT has Super Cow Powers.
+Script: [8] ::: Configure APT
+/etc/apt/apt.conf.d/10periodic:APT::Periodic::AutocleanInterval "0";
+[9] /etc/login.defs
+Script: [10] ::: Edit /etc/hosts.allow and /etc/hosts.deny
+Script: [11] ::: Configure /etc/sysctl.conf
+dev.tty.ldisc_autoload = 0
+fs.protected_fifos = 2
+fs.protected_hardlinks = 1
+fs.protected_symlinks = 1
+fs.suid_dumpable = 0
+kernel.core_uses_pid = 1
+kernel.dmesg_restrict = 1
+kernel.kptr_restrict = 2
+kernel.panic = 60
+kernel.panic_on_oops = 60
+kernel.perf_event_paranoid = 3
+kernel.randomize_va_space = 2
+kernel.sysrq = 0
+kernel.unprivileged_bpf_disabled = 1
+kernel.yama.ptrace_scope = 2
+net.core.bpf_jit_harden = 2
+net.ipv4.conf.all.accept_redirects = 0
+net.ipv4.conf.all.accept_source_route = 0
+net.ipv4.conf.all.log_martians = 1
+net.ipv4.conf.all.rp_filter = 1
+net.ipv4.conf.all.secure_redirects = 0
+net.ipv4.conf.all.send_redirects = 0
+net.ipv4.conf.all.shared_media = 0
+net.ipv4.conf.default.accept_redirects = 0
+net.ipv4.conf.default.accept_source_route = 0
+net.ipv4.conf.default.log_martians = 1
+net.ipv4.conf.default.rp_filter = 1
+net.ipv4.conf.default.secure_redirects = 0
+net.ipv4.conf.default.send_redirects = 0
+net.ipv4.conf.default.shared_media = 0
+net.ipv4.icmp_echo_ignore_broadcasts = 1
+net.ipv4.icmp_ignore_bogus_error_responses = 1
+net.ipv4.ip_forward = 0
+net.ipv4.tcp_challenge_ack_limit = 2147483647
+net.ipv4.tcp_invalid_ratelimit = 500
+net.ipv4.tcp_max_syn_backlog = 20480
+net.ipv4.tcp_rfc1337 = 1
+net.ipv4.tcp_syn_retries = 5
+net.ipv4.tcp_synack_retries = 2
+net.ipv4.tcp_syncookies = 1
+net.ipv6.conf.all.accept_ra = 0
+net.ipv6.conf.all.accept_redirects = 0
+net.ipv6.conf.all.accept_source_route = 0
+net.ipv6.conf.all.forwarding = 0
+net.ipv6.conf.all.use_tempaddr = 2
+net.ipv6.conf.default.accept_ra = 0
+net.ipv6.conf.default.accept_ra_defrtr = 0
+net.ipv6.conf.default.accept_ra_pinfo = 0
+net.ipv6.conf.default.accept_ra_rtr_pref = 0
+net.ipv6.conf.default.accept_redirects = 0
+net.ipv6.conf.default.accept_source_route = 0
+net.ipv6.conf.default.autoconf = 0
+net.ipv6.conf.default.dad_transmits = 0
+net.ipv6.conf.default.max_addresses = 1
+net.ipv6.conf.default.router_solicitations = 0
+net.ipv6.conf.default.use_tempaddr = 2
+kernel.panic = 10
+kernel.modules_disabled = 1
+Script: [12] ::: Installing important packages
+[    0.000000] DMI: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following NEW packages will be installed:
+  acct
+0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+Need to get 87.0 kB of archives.
+After this operation, 337 kB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu focal/main amd64 acct amd64 6.6.4-2 [87.0 kB]
+Fetched 87.0 kB in 1s (86.2 kB/s)
+Selecting previously unselected package acct.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 94752 files and directories currently installed.)
+Preparing to unpack .../acct_6.6.4-2_amd64.deb ...
+Unpacking acct (6.6.4-2) ...
+Setting up acct (6.6.4-2) ...
+update-rc.d: warning: start and stop actions are no longer supported; falling back to defaults
+update-rc.d: warning: stop runlevel arguments (1) do not match acct Default-Stop values (0 1 6)
+Processing triggers for man-db (2.9.1-1) ...
+Processing triggers for install-info (6.7.0.dfsg.2-5) ...
+Processing triggers for systemd (245.4-4ubuntu3.19) ...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  aide bsd-mailx liblockfile-bin liblockfile1 postfix ssl-cert
+Suggested packages:
+  figlet procmail postfix-mysql postfix-pgsql postfix-ldap postfix-pcre
+  postfix-lmdb postfix-sqlite sasl2-bin | dovecot-common resolvconf
+  postfix-cdb postfix-doc openssl-blacklist
+The following NEW packages will be installed:
+  aide aide-common bsd-mailx liblockfile-bin liblockfile1 postfix ssl-cert
+0 upgraded, 7 newly installed, 0 to remove and 0 not upgraded.
+Need to get 2135 kB of archives.
+After this operation, 7494 kB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 aide amd64 0.16.1-1ubuntu0.1 [765 kB]
+Get:2 http://archive.ubuntu.com/ubuntu focal/main amd64 ssl-cert all 1.0.39 [17.0 kB]
+Get:3 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 postfix amd64 3.4.13-0ubuntu1.2 [1201 kB]
+Get:4 http://archive.ubuntu.com/ubuntu focal/main amd64 liblockfile-bin amd64 1.16-1.1 [11.7 kB]
+Get:5 http://archive.ubuntu.com/ubuntu focal/main amd64 liblockfile1 amd64 1.16-1.1 [6680 B]
+Get:6 http://archive.ubuntu.com/ubuntu focal/main amd64 bsd-mailx amd64 8.1.2-0.20180807cvs-1 [67.2 kB]
+Get:7 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 aide-common all 0.16.1-1ubuntu0.1 [66.4 kB]
+Preconfiguring packages ...
+Fetched 2135 kB in 4s (481 kB/s)
+Selecting previously unselected package aide.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 94784 files and directories currently installed.)
+Preparing to unpack .../0-aide_0.16.1-1ubuntu0.1_amd64.deb ...
+Unpacking aide (0.16.1-1ubuntu0.1) ...
+Selecting previously unselected package ssl-cert.
+Preparing to unpack .../1-ssl-cert_1.0.39_all.deb ...
+Unpacking ssl-cert (1.0.39) ...
+Selecting previously unselected package postfix.
+Preparing to unpack .../2-postfix_3.4.13-0ubuntu1.2_amd64.deb ...
+Unpacking postfix (3.4.13-0ubuntu1.2) ...
+Selecting previously unselected package liblockfile-bin.
+Preparing to unpack .../3-liblockfile-bin_1.16-1.1_amd64.deb ...
+Unpacking liblockfile-bin (1.16-1.1) ...
+Selecting previously unselected package liblockfile1:amd64.
+Preparing to unpack .../4-liblockfile1_1.16-1.1_amd64.deb ...
+Unpacking liblockfile1:amd64 (1.16-1.1) ...
+Selecting previously unselected package bsd-mailx.
+Preparing to unpack .../5-bsd-mailx_8.1.2-0.20180807cvs-1_amd64.deb ...
+Unpacking bsd-mailx (8.1.2-0.20180807cvs-1) ...
+Selecting previously unselected package aide-common.
+Preparing to unpack .../6-aide-common_0.16.1-1ubuntu0.1_all.deb ...
+Unpacking aide-common (0.16.1-1ubuntu0.1) ...
+Setting up aide (0.16.1-1ubuntu0.1) ...
+Setting up liblockfile-bin (1.16-1.1) ...
+Setting up ssl-cert (1.0.39) ...
+Setting up postfix (3.4.13-0ubuntu1.2) ...
+Adding group `postfix' (GID 122) ...
+Done.
+Adding system user `postfix' (UID 113) ...
+Adding new user `postfix' (UID 113) with group `postfix' ...
+Not creating home directory `/var/spool/postfix'.
+Creating /etc/postfix/dynamicmaps.cf
+Adding group `postdrop' (GID 123) ...
+Done.
+setting myhostname: focal.basisschools.local
+setting alias maps
+setting alias database
+mailname is not a fully qualified domain name.  Not changing /etc/mailname.
+setting destinations: $myhostname, focal, localhost.localdomain, , localhost
+setting relayhost: 
+setting mynetworks: 127.0.0.0/8 [::ffff:127.0.0.0]/104 [::1]/128
+setting mailbox_size_limit: 0
+setting recipient_delimiter: +
+setting inet_interfaces: all
+setting inet_protocols: all
+/etc/aliases does not exist, creating it.
+WARNING: /etc/aliases exists, but does not have a root alias.
+
+Postfix (main.cf) is now set up with a default configuration.  If you need to 
+make changes, edit /etc/postfix/main.cf (and others) as needed.  To view 
+Postfix configuration values, see postconf(1).
+
+After modifying main.cf, be sure to run 'systemctl reload postfix'.
+
+Running newaliases
+Created symlink /etc/systemd/system/multi-user.target.wants/postfix.service → /lib/systemd/system/postfix.service.
+Setting up liblockfile1:amd64 (1.16-1.1) ...
+Setting up bsd-mailx (8.1.2-0.20180807cvs-1) ...
+update-alternatives: using /usr/bin/bsd-mailx to provide /usr/bin/mailx (mailx) in auto mode
+Setting up aide-common (0.16.1-1ubuntu0.1) ...
+
+Creating config file /etc/aide/aide.settings.d/31_aide_trac_settings with new version
+
+Creating config file /etc/aide/aide.settings.d/31_aide_apt_settings with new version
+
+Creating config file /etc/aide/aide.settings.d/10_aide_sourceslist with new version
+
+Creating config file /etc/aide/aide.settings.d/31_aide_svn-server_settings with new version
+
+Creating config file /etc/aide/aide.conf with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_aptitude_frqchg with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_rngd with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_dovecot with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_postfix with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_util-linux with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_lvm2 with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_inetd with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_ddclient with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_lib-init-rw with new version
+
+Creating config file /etc/aide/aide.conf.d/70_aide_tmp with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_svn-server with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_openvpn with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_nfs with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_alsa with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_mail with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_hald with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_x11-common with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_network with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_cereal with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_apt-listchanges with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_pcscd with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_cracklib-runtime with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_btmp with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_cron-apt with new version
+
+Creating config file /etc/aide/aide.conf.d/99_aide_root with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_apt-show-versions with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_rkhunter with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_clamav with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_ssh-server with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_initscripts with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_fail2ban with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_aide with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_logcheck with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_ifplugd with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_torrus with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_ifupdown with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_nagios2 with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_clamav-freshclam with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_kerberos with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_resolvconf with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_apt with new version
+
+Creating config file /etc/aide/aide.conf.d/30_aide_apache2 with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_php-common with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_fcron with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_xfree86-common with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_munin with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_proftpd with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_opie-server with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_anubis with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_isc-dhcp-server with new version
+
+Creating config file /etc/aide/aide.conf.d/70_aide_dev with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_x11-xkb-utils with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_snmpd with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_crack with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_lighttpd with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_anacron with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_lastlog with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_spamassassin with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_wpasupplicant with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_smartmontools with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_debconf with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_mailman with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_pm-utils with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_slrn with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_apt-file with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_privoxy with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_apache2 with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_run_systemd_resolve with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_screen with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_squid with new version
+
+Creating config file /etc/aide/aide.conf.d/10_aide_hostname with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_libapache2-mod-fastcgi with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_acpid with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_run_systemd_netif with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_inn2 with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_laptop-mode-tools with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_libvirt-bin with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_root-dotfiles with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_pam_motd with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_udev with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_mlocate with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_nslcd with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_munin-nodes with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_ippl with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_ssh-agent with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_bind9 with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_gnupg with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_tt-rss with new version
+
+Creating config file /etc/aide/aide.conf.d/70_aide_var with new version
+
+Creating config file /etc/aide/aide.conf.d/70_aide_run with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_debsecan with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_mysql-server with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_findutils with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_vpnc with new version
+
+Creating config file /etc/aide/aide.conf.d/10_aide_prevyear with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_rsyslog with new version
+
+Creating config file /etc/aide/aide.conf.d/10_aide_year with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_nscd with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_tetex-bin with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_man with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_postgrey with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_apache with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_smokeping with new version
+
+Creating config file /etc/aide/aide.conf.d/10_aide_constants with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_slapd with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_dlocate with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_apcupsd with new version
+
+Creating config file /etc/aide/aide.conf.d/70_aide_etc with new version
+
+Creating config file /etc/aide/aide.conf.d/70_aide_proc_sys with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_mtab with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_php7 with new version
+
+Creating config file /etc/aide/aide.conf.d/30_inn2_vars with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_console-log with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_ntp-server with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_isc-dhcp-client with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_cups with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_portmap with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_initramfs-tools with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_logrotate with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_at with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_amavisd-new with new version
+
+Creating config file /etc/aide/aide.conf.d/10_aide_distribution with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_adjtime with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_mdadm with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_boinc-client with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_apt_frqchg with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_exim4_logs with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_systemd_sessions with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_dokuwiki with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_xinetd with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_checksecurity with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_dpkg with new version
+
+Creating config file /etc/aide/aide.conf.d/10_aide_run with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_etckeeper with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_systemd_journal with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_hapsd with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_xdm with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_apt-listbugs with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_trac with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_exim4 with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_dbus with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_webalizer with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_tiger with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_amanda-server with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_rsnapshot with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_utmp with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_postgresql with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_runuser with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_modules with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_nrpe with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_amanda-client with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_wtmp with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_sudo with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_nagios3 with new version
+
+Creating config file /etc/aide/aide.conf.d/30_aide_bind9 with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_atop with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_samba with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_aptitude with new version
+
+Creating config file /etc/aide/aide.conf.d/31_aide_cron with new version
+
+Creating config file /etc/cron.daily/aide with new version
+
+Creating config file /etc/default/aide with new version
+Processing triggers for rsyslog (8.2001.0-1ubuntu1.3) ...
+Processing triggers for ufw (0.36-6ubuntu1) ...
+Processing triggers for systemd (245.4-4ubuntu3.19) ...
+Processing triggers for man-db (2.9.1-1) ...
+Processing triggers for libc-bin (2.31-0ubuntu9.9) ...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  libcrack2
+Recommended packages:
+  wamerican | wordlist
+The following NEW packages will be installed:
+  cracklib-runtime libcrack2
+0 upgraded, 2 newly installed, 0 to remove and 0 not upgraded.
+Need to get 168 kB of archives.
+After this operation, 766 kB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu focal/main amd64 libcrack2 amd64 2.9.6-3.2 [28.3 kB]
+Get:2 http://archive.ubuntu.com/ubuntu focal/main amd64 cracklib-runtime amd64 2.9.6-3.2 [140 kB]
+Fetched 168 kB in 0s (347 kB/s)
+Selecting previously unselected package libcrack2:amd64.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 95221 files and directories currently installed.)
+Preparing to unpack .../libcrack2_2.9.6-3.2_amd64.deb ...
+Unpacking libcrack2:amd64 (2.9.6-3.2) ...
+Selecting previously unselected package cracklib-runtime.
+Preparing to unpack .../cracklib-runtime_2.9.6-3.2_amd64.deb ...
+Unpacking cracklib-runtime (2.9.6-3.2) ...
+Setting up libcrack2:amd64 (2.9.6-3.2) ...
+Setting up cracklib-runtime (2.9.6-3.2) ...
+Processing triggers for man-db (2.9.1-1) ...
+Processing triggers for libc-bin (2.31-0ubuntu9.9) ...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  libdpkg-perl libfile-fnmatch-perl
+Suggested packages:
+  debian-keyring gcc | c-compiler binutils bzr
+Recommended packages:
+  libfile-fcntllock-perl
+The following NEW packages will be installed:
+  debsums libdpkg-perl libfile-fnmatch-perl
+0 upgraded, 3 newly installed, 0 to remove and 0 not upgraded.
+Need to get 283 kB of archives.
+After this operation, 2398 kB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libdpkg-perl all 1.19.7ubuntu3.2 [231 kB]
+Get:2 http://archive.ubuntu.com/ubuntu focal/universe amd64 libfile-fnmatch-perl amd64 0.02-2build6 [10.1 kB]
+Get:3 http://archive.ubuntu.com/ubuntu focal/universe amd64 debsums all 2.2.5 [42.2 kB]
+Fetched 283 kB in 1s (403 kB/s)
+Selecting previously unselected package libdpkg-perl.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 95258 files and directories currently installed.)
+Preparing to unpack .../libdpkg-perl_1.19.7ubuntu3.2_all.deb ...
+Unpacking libdpkg-perl (1.19.7ubuntu3.2) ...
+Selecting previously unselected package libfile-fnmatch-perl.
+Preparing to unpack .../libfile-fnmatch-perl_0.02-2build6_amd64.deb ...
+Unpacking libfile-fnmatch-perl (0.02-2build6) ...
+Selecting previously unselected package debsums.
+Preparing to unpack .../archives/debsums_2.2.5_all.deb ...
+Unpacking debsums (2.2.5) ...
+Setting up libdpkg-perl (1.19.7ubuntu3.2) ...
+Setting up libfile-fnmatch-perl (0.02-2build6) ...
+Setting up debsums (2.2.5) ...
+Processing triggers for man-db (2.9.1-1) ...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following NEW packages will be installed:
+  gnupg2
+0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+Need to get 5316 B of archives.
+After this operation, 51.2 kB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu focal-updates/universe amd64 gnupg2 all 2.2.19-3ubuntu2.2 [5316 B]
+Fetched 5316 B in 0s (26.7 kB/s)
+Selecting previously unselected package gnupg2.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 95446 files and directories currently installed.)
+Preparing to unpack .../gnupg2_2.2.19-3ubuntu2.2_all.deb ...
+Unpacking gnupg2 (2.2.19-3ubuntu2.2) ...
+Setting up gnupg2 (2.2.19-3ubuntu2.2) ...
+Processing triggers for man-db (2.9.1-1) ...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  libhavege1
+The following NEW packages will be installed:
+  haveged libhavege1
+0 upgraded, 2 newly installed, 0 to remove and 0 not upgraded.
+Need to get 50.4 kB of archives.
+After this operation, 196 kB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu focal/universe amd64 libhavege1 amd64 1.9.1-6ubuntu1 [22.0 kB]
+Get:2 http://archive.ubuntu.com/ubuntu focal/universe amd64 haveged amd64 1.9.1-6ubuntu1 [28.4 kB]
+Fetched 50.4 kB in 0s (139 kB/s)
+Selecting previously unselected package libhavege1:amd64.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 95452 files and directories currently installed.)
+Preparing to unpack .../libhavege1_1.9.1-6ubuntu1_amd64.deb ...
+Unpacking libhavege1:amd64 (1.9.1-6ubuntu1) ...
+Selecting previously unselected package haveged.
+Preparing to unpack .../haveged_1.9.1-6ubuntu1_amd64.deb ...
+Unpacking haveged (1.9.1-6ubuntu1) ...
+Setting up libhavege1:amd64 (1.9.1-6ubuntu1) ...
+Setting up haveged (1.9.1-6ubuntu1) ...
+Created symlink /etc/systemd/system/default.target.wants/haveged.service → /lib/systemd/system/haveged.service.
+Processing triggers for systemd (245.4-4ubuntu3.19) ...
+Processing triggers for man-db (2.9.1-1) ...
+Processing triggers for libc-bin (2.31-0ubuntu9.9) ...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  libpwquality-common libpwquality1
+The following NEW packages will be installed:
+  libpam-pwquality libpwquality-common libpwquality1
+0 upgraded, 3 newly installed, 0 to remove and 0 not upgraded.
+Need to get 31.7 kB of archives.
+After this operation, 159 kB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu focal/main amd64 libpwquality-common all 1.4.2-1build1 [7744 B]
+Get:2 http://archive.ubuntu.com/ubuntu focal/main amd64 libpwquality1 amd64 1.4.2-1build1 [12.7 kB]
+Get:3 http://archive.ubuntu.com/ubuntu focal/main amd64 libpam-pwquality amd64 1.4.2-1build1 [11.2 kB]
+Fetched 31.7 kB in 0s (111 kB/s)
+Selecting previously unselected package libpwquality-common.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 95468 files and directories currently installed.)
+Preparing to unpack .../libpwquality-common_1.4.2-1build1_all.deb ...
+Unpacking libpwquality-common (1.4.2-1build1) ...
+Selecting previously unselected package libpwquality1:amd64.
+Preparing to unpack .../libpwquality1_1.4.2-1build1_amd64.deb ...
+Unpacking libpwquality1:amd64 (1.4.2-1build1) ...
+Selecting previously unselected package libpam-pwquality:amd64.
+Preparing to unpack .../libpam-pwquality_1.4.2-1build1_amd64.deb ...
+Unpacking libpam-pwquality:amd64 (1.4.2-1build1) ...
+Setting up libpwquality-common (1.4.2-1build1) ...
+Setting up libpwquality1:amd64 (1.4.2-1build1) ...
+Setting up libpam-pwquality:amd64 (1.4.2-1build1) ...
+Processing triggers for libc-bin (2.31-0ubuntu9.9) ...
+Processing triggers for man-db (2.9.1-1) ...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following NEW packages will be installed:
+  libpam-tmpdir
+0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+Need to get 11.3 kB of archives.
+After this operation, 52.2 kB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu focal/universe amd64 libpam-tmpdir amd64 0.09build1 [11.3 kB]
+Fetched 11.3 kB in 0s (56.9 kB/s)
+Selecting previously unselected package libpam-tmpdir.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 95484 files and directories currently installed.)
+Preparing to unpack .../libpam-tmpdir_0.09build1_amd64.deb ...
+Unpacking libpam-tmpdir (0.09build1) ...
+Setting up libpam-tmpdir (0.09build1) ...
+Processing triggers for man-db (2.9.1-1) ...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  binutils binutils-common binutils-x86-64-linux-gnu libbinutils libctf-nobfd0
+  libctf0 libintl-perl libmodule-find-perl libmodule-scandeps-perl
+  libproc-processtable-perl libsort-naturally-perl libterm-readkey-perl
+Suggested packages:
+  binutils-doc needrestart-session | libnotify-bin iucode-tool
+Recommended packages:
+  libintl-xs-perl
+The following NEW packages will be installed:
+  binutils binutils-common binutils-x86-64-linux-gnu libbinutils libctf-nobfd0
+  libctf0 libintl-perl libmodule-find-perl libmodule-scandeps-perl
+  libproc-processtable-perl libsort-naturally-perl libterm-readkey-perl
+  needrestart
+0 upgraded, 13 newly installed, 0 to remove and 0 not upgraded.
+Need to get 3270 kB of archives.
+After this operation, 18.8 MB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 binutils-common amd64 2.34-6ubuntu1.4 [207 kB]
+Get:2 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libbinutils amd64 2.34-6ubuntu1.4 [474 kB]
+Get:3 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libctf-nobfd0 amd64 2.34-6ubuntu1.4 [47.2 kB]
+Get:4 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libctf0 amd64 2.34-6ubuntu1.4 [46.6 kB]
+Get:5 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 binutils-x86-64-linux-gnu amd64 2.34-6ubuntu1.4 [1613 kB]
+Get:6 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 binutils amd64 2.34-6ubuntu1.4 [3380 B]
+Get:7 http://archive.ubuntu.com/ubuntu focal/universe amd64 libintl-perl all 1.26-2build4 [724 kB]
+Get:8 http://archive.ubuntu.com/ubuntu focal/universe amd64 libmodule-find-perl all 0.15-1 [10.9 kB]
+Get:9 http://archive.ubuntu.com/ubuntu focal/universe amd64 libmodule-scandeps-perl all 1.27-1 [28.7 kB]
+Get:10 http://archive.ubuntu.com/ubuntu focal/universe amd64 libproc-processtable-perl amd64 0.59-2 [35.1 kB]
+Get:11 http://archive.ubuntu.com/ubuntu focal/universe amd64 libsort-naturally-perl all 1.03-2 [13.3 kB]
+Get:12 http://archive.ubuntu.com/ubuntu focal/main amd64 libterm-readkey-perl amd64 2.38-1build1 [24.6 kB]
+Get:13 http://archive.ubuntu.com/ubuntu focal-updates/universe amd64 needrestart all 3.4-6ubuntu0.1 [42.6 kB]
+Fetched 3270 kB in 2s (2060 kB/s)
+Selecting previously unselected package binutils-common:amd64.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 95494 files and directories currently installed.)
+Preparing to unpack .../00-binutils-common_2.34-6ubuntu1.4_amd64.deb ...
+Unpacking binutils-common:amd64 (2.34-6ubuntu1.4) ...
+Selecting previously unselected package libbinutils:amd64.
+Preparing to unpack .../01-libbinutils_2.34-6ubuntu1.4_amd64.deb ...
+Unpacking libbinutils:amd64 (2.34-6ubuntu1.4) ...
+Selecting previously unselected package libctf-nobfd0:amd64.
+Preparing to unpack .../02-libctf-nobfd0_2.34-6ubuntu1.4_amd64.deb ...
+Unpacking libctf-nobfd0:amd64 (2.34-6ubuntu1.4) ...
+Selecting previously unselected package libctf0:amd64.
+Preparing to unpack .../03-libctf0_2.34-6ubuntu1.4_amd64.deb ...
+Unpacking libctf0:amd64 (2.34-6ubuntu1.4) ...
+Selecting previously unselected package binutils-x86-64-linux-gnu.
+Preparing to unpack .../04-binutils-x86-64-linux-gnu_2.34-6ubuntu1.4_amd64.deb ...
+Unpacking binutils-x86-64-linux-gnu (2.34-6ubuntu1.4) ...
+Selecting previously unselected package binutils.
+Preparing to unpack .../05-binutils_2.34-6ubuntu1.4_amd64.deb ...
+Unpacking binutils (2.34-6ubuntu1.4) ...
+Selecting previously unselected package libintl-perl.
+Preparing to unpack .../06-libintl-perl_1.26-2build4_all.deb ...
+Unpacking libintl-perl (1.26-2build4) ...
+Selecting previously unselected package libmodule-find-perl.
+Preparing to unpack .../07-libmodule-find-perl_0.15-1_all.deb ...
+Unpacking libmodule-find-perl (0.15-1) ...
+Selecting previously unselected package libmodule-scandeps-perl.
+Preparing to unpack .../08-libmodule-scandeps-perl_1.27-1_all.deb ...
+Unpacking libmodule-scandeps-perl (1.27-1) ...
+Selecting previously unselected package libproc-processtable-perl.
+Preparing to unpack .../09-libproc-processtable-perl_0.59-2_amd64.deb ...
+Unpacking libproc-processtable-perl (0.59-2) ...
+Selecting previously unselected package libsort-naturally-perl.
+Preparing to unpack .../10-libsort-naturally-perl_1.03-2_all.deb ...
+Unpacking libsort-naturally-perl (1.03-2) ...
+Selecting previously unselected package libterm-readkey-perl.
+Preparing to unpack .../11-libterm-readkey-perl_2.38-1build1_amd64.deb ...
+Unpacking libterm-readkey-perl (2.38-1build1) ...
+Selecting previously unselected package needrestart.
+Preparing to unpack .../12-needrestart_3.4-6ubuntu0.1_all.deb ...
+Unpacking needrestart (3.4-6ubuntu0.1) ...
+Setting up binutils-common:amd64 (2.34-6ubuntu1.4) ...
+Setting up libctf-nobfd0:amd64 (2.34-6ubuntu1.4) ...
+Setting up libmodule-find-perl (0.15-1) ...
+Setting up libproc-processtable-perl (0.59-2) ...
+Setting up libintl-perl (1.26-2build4) ...
+Setting up libterm-readkey-perl (2.38-1build1) ...
+Setting up libbinutils:amd64 (2.34-6ubuntu1.4) ...
+Setting up libsort-naturally-perl (1.03-2) ...
+Setting up libmodule-scandeps-perl (1.27-1) ...
+Setting up libctf0:amd64 (2.34-6ubuntu1.4) ...
+Setting up binutils-x86-64-linux-gnu (2.34-6ubuntu1.4) ...
+Setting up binutils (2.34-6ubuntu1.4) ...
+Setting up needrestart (3.4-6ubuntu0.1) ...
+Processing triggers for man-db (2.9.1-1) ...
+Processing triggers for libc-bin (2.31-0ubuntu9.9) ...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+openssh-server is already the newest version (1:8.2p1-4ubuntu0.5).
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Reading package lists...
+Building dependency tree...
+Reading state information...
+postfix is already the newest version (3.4.13-0ubuntu1.2).
+postfix set to manually installed.
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  libbit-vector-perl libcarp-clan-perl libdate-calc-perl
+  libiptables-chainmgr-perl libiptables-parse-perl libnet-ip-perl
+  libnetaddr-ip-perl libunix-syslog-perl net-tools whois
+Suggested packages:
+  fwsnort
+Recommended packages:
+  libdate-calc-xs-perl libsocket6-perl
+The following NEW packages will be installed:
+  libbit-vector-perl libcarp-clan-perl libdate-calc-perl
+  libiptables-chainmgr-perl libiptables-parse-perl libnet-ip-perl
+  libnetaddr-ip-perl libunix-syslog-perl net-tools psad whois
+0 upgraded, 11 newly installed, 0 to remove and 0 not upgraded.
+Need to get 894 kB of archives.
+After this operation, 3640 kB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu focal/universe amd64 libcarp-clan-perl all 6.08-1 [13.4 kB]
+Get:2 http://archive.ubuntu.com/ubuntu focal/universe amd64 libbit-vector-perl amd64 7.4-1build6 [138 kB]
+Get:3 http://archive.ubuntu.com/ubuntu focal/universe amd64 libdate-calc-perl all 6.4-1 [187 kB]
+Get:4 http://archive.ubuntu.com/ubuntu focal/universe amd64 libiptables-parse-perl all 1.6-1 [16.8 kB]
+Get:5 http://archive.ubuntu.com/ubuntu focal/main amd64 libnetaddr-ip-perl amd64 4.079+dfsg-1build4 [81.0 kB]
+Get:6 http://archive.ubuntu.com/ubuntu focal/universe amd64 libiptables-chainmgr-perl all 1.6-1 [17.5 kB]
+Get:7 http://archive.ubuntu.com/ubuntu focal/main amd64 libnet-ip-perl all 1.26-2 [27.4 kB]
+Get:8 http://archive.ubuntu.com/ubuntu focal/main amd64 libunix-syslog-perl amd64 1.1-3build2 [20.5 kB]
+Get:9 http://archive.ubuntu.com/ubuntu focal/main amd64 net-tools amd64 1.60+git20180626.aebd88e-1ubuntu1 [196 kB]
+Get:10 http://archive.ubuntu.com/ubuntu focal/main amd64 whois amd64 5.5.6 [44.7 kB]
+Get:11 http://archive.ubuntu.com/ubuntu focal/universe amd64 psad amd64 2.4.3-1.2 [150 kB]
+Fetched 894 kB in 2s (375 kB/s)
+Selecting previously unselected package libcarp-clan-perl.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 96235 files and directories currently installed.)
+Preparing to unpack .../00-libcarp-clan-perl_6.08-1_all.deb ...
+Unpacking libcarp-clan-perl (6.08-1) ...
+Selecting previously unselected package libbit-vector-perl.
+Preparing to unpack .../01-libbit-vector-perl_7.4-1build6_amd64.deb ...
+Unpacking libbit-vector-perl (7.4-1build6) ...
+Selecting previously unselected package libdate-calc-perl.
+Preparing to unpack .../02-libdate-calc-perl_6.4-1_all.deb ...
+Unpacking libdate-calc-perl (6.4-1) ...
+Selecting previously unselected package libiptables-parse-perl.
+Preparing to unpack .../03-libiptables-parse-perl_1.6-1_all.deb ...
+Unpacking libiptables-parse-perl (1.6-1) ...
+Selecting previously unselected package libnetaddr-ip-perl.
+Preparing to unpack .../04-libnetaddr-ip-perl_4.079+dfsg-1build4_amd64.deb ...
+Unpacking libnetaddr-ip-perl (4.079+dfsg-1build4) ...
+Selecting previously unselected package libiptables-chainmgr-perl.
+Preparing to unpack .../05-libiptables-chainmgr-perl_1.6-1_all.deb ...
+Unpacking libiptables-chainmgr-perl (1.6-1) ...
+Selecting previously unselected package libnet-ip-perl.
+Preparing to unpack .../06-libnet-ip-perl_1.26-2_all.deb ...
+Unpacking libnet-ip-perl (1.26-2) ...
+Selecting previously unselected package libunix-syslog-perl.
+Preparing to unpack .../07-libunix-syslog-perl_1.1-3build2_amd64.deb ...
+Unpacking libunix-syslog-perl (1.1-3build2) ...
+Selecting previously unselected package net-tools.
+Preparing to unpack .../08-net-tools_1.60+git20180626.aebd88e-1ubuntu1_amd64.deb ...
+Unpacking net-tools (1.60+git20180626.aebd88e-1ubuntu1) ...
+Selecting previously unselected package whois.
+Preparing to unpack .../09-whois_5.5.6_amd64.deb ...
+Unpacking whois (5.5.6) ...
+Selecting previously unselected package psad.
+Preparing to unpack .../10-psad_2.4.3-1.2_amd64.deb ...
+Unpacking psad (2.4.3-1.2) ...
+Setting up net-tools (1.60+git20180626.aebd88e-1ubuntu1) ...
+Setting up whois (5.5.6) ...
+Setting up libiptables-parse-perl (1.6-1) ...
+Setting up libnetaddr-ip-perl (4.079+dfsg-1build4) ...
+Setting up libunix-syslog-perl (1.1-3build2) ...
+Setting up libcarp-clan-perl (6.08-1) ...
+Setting up libnet-ip-perl (1.26-2) ...
+Setting up libiptables-chainmgr-perl (1.6-1) ...
+Setting up libbit-vector-perl (7.4-1build6) ...
+Setting up libdate-calc-perl (6.4-1) ...
+Setting up psad (2.4.3-1.2) ...
+Processing triggers for man-db (2.9.1-1) ...
+Processing triggers for systemd (245.4-4ubuntu3.19) ...
+
+Pending kernel upgrade!
+
+Running kernel version:
+  5.4.0-131-generic
+
+Diagnostics:
+  The currently running kernel version is not the expected kernel version 5.4.0-135-generic.
+
+Restarting the system to load the new kernel will not be handled automatically, so you should consider rebooting. [Return]
+
+Services to be restarted:
+ systemctl restart accounts-daemon.service
+ systemctl restart irqbalance.service
+ systemctl restart networkd-dispatcher.service
+ systemctl restart packagekit.service
+ systemctl restart polkit.service
+ systemctl restart ssh.service
+ systemctl restart udisks2.service
+
+Service restarts being deferred:
+ systemctl restart ModemManager.service
+ /etc/needrestart/restart.d/dbus.service
+ systemctl restart systemd-logind.service
+ systemctl restart unattended-upgrades.service
+
+No containers need to be restarted.
+
+User sessions running outdated binaries:
+ vagrant @ session #4: sshd[2198]
+ vagrant @ user manager service: systemd[2216]
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Suggested packages:
+  liburi-perl libwww-perl
+Recommended packages:
+  unhide unhide.rb
+The following NEW packages will be installed:
+  rkhunter
+0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+Need to get 213 kB of archives.
+After this operation, 1107 kB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu focal/universe amd64 rkhunter all 1.4.6-8 [213 kB]
+Preconfiguring packages ...
+Fetched 213 kB in 3s (81.9 kB/s)
+Selecting previously unselected package rkhunter.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 96498 files and directories currently installed.)
+Preparing to unpack .../rkhunter_1.4.6-8_all.deb ...
+Unpacking rkhunter (1.4.6-8) ...
+Setting up rkhunter (1.4.6-8) ...
+
+Creating config file /etc/default/rkhunter with new version
+[ Rootkit Hunter version 1.4.6 ]
+File created: searched for 179 files, found 136
+Processing triggers for man-db (2.9.1-1) ...
+
+Pending kernel upgrade!
+
+Running kernel version:
+  5.4.0-131-generic
+
+Diagnostics:
+  The currently running kernel version is not the expected kernel version 5.4.0-135-generic.
+
+Restarting the system to load the new kernel will not be handled automatically, so you should consider rebooting. [Return]
+
+Services to be restarted:
+ systemctl restart accounts-daemon.service
+ systemctl restart irqbalance.service
+ systemctl restart networkd-dispatcher.service
+ systemctl restart packagekit.service
+ systemctl restart polkit.service
+ systemctl restart ssh.service
+ systemctl restart udisks2.service
+
+Service restarts being deferred:
+ systemctl restart ModemManager.service
+ /etc/needrestart/restart.d/dbus.service
+ systemctl restart systemd-logind.service
+ systemctl restart unattended-upgrades.service
+
+No containers need to be restarted.
+
+User sessions running outdated binaries:
+ vagrant @ session #4: sshd[2198]
+ vagrant @ user manager service: systemd[2216]
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  libsensors-config libsensors5
+Suggested packages:
+  lm-sensors isag
+The following NEW packages will be installed:
+  libsensors-config libsensors5 sysstat
+0 upgraded, 3 newly installed, 0 to remove and 0 not upgraded.
+Need to get 481 kB of archives.
+After this operation, 1657 kB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libsensors-config all 1:3.6.0-2ubuntu1.1 [6052 B]
+Get:2 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libsensors5 amd64 1:3.6.0-2ubuntu1.1 [27.2 kB]
+Get:3 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 sysstat amd64 12.2.0-2ubuntu0.2 [448 kB]
+Preconfiguring packages ...
+Fetched 481 kB in 1s (632 kB/s)
+Selecting previously unselected package libsensors-config.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 96554 files and directories currently installed.)
+Preparing to unpack .../libsensors-config_1%3a3.6.0-2ubuntu1.1_all.deb ...
+Unpacking libsensors-config (1:3.6.0-2ubuntu1.1) ...
+Selecting previously unselected package libsensors5:amd64.
+Preparing to unpack .../libsensors5_1%3a3.6.0-2ubuntu1.1_amd64.deb ...
+Unpacking libsensors5:amd64 (1:3.6.0-2ubuntu1.1) ...
+Selecting previously unselected package sysstat.
+Preparing to unpack .../sysstat_12.2.0-2ubuntu0.2_amd64.deb ...
+Unpacking sysstat (12.2.0-2ubuntu0.2) ...
+Setting up libsensors-config (1:3.6.0-2ubuntu1.1) ...
+Setting up libsensors5:amd64 (1:3.6.0-2ubuntu1.1) ...
+Setting up sysstat (12.2.0-2ubuntu0.2) ...
+
+Creating config file /etc/default/sysstat with new version
+update-alternatives: using /usr/bin/sar.sysstat to provide /usr/bin/sar (sar) in auto mode
+Created symlink /etc/systemd/system/multi-user.target.wants/sysstat.service → /lib/systemd/system/sysstat.service.
+Processing triggers for systemd (245.4-4ubuntu3.19) ...
+Processing triggers for man-db (2.9.1-1) ...
+Processing triggers for libc-bin (2.31-0ubuntu9.9) ...
+
+Pending kernel upgrade!
+
+Running kernel version:
+  5.4.0-131-generic
+
+Diagnostics:
+  The currently running kernel version is not the expected kernel version 5.4.0-135-generic.
+
+Restarting the system to load the new kernel will not be handled automatically, so you should consider rebooting. [Return]
+
+Services to be restarted:
+ systemctl restart accounts-daemon.service
+ systemctl restart irqbalance.service
+ systemctl restart networkd-dispatcher.service
+ systemctl restart packagekit.service
+ systemctl restart polkit.service
+ systemctl restart ssh.service
+ systemctl restart udisks2.service
+
+Service restarts being deferred:
+ systemctl restart ModemManager.service
+ /etc/needrestart/restart.d/dbus.service
+ systemctl restart systemd-logind.service
+ systemctl restart unattended-upgrades.service
+
+No containers need to be restarted.
+
+User sessions running outdated binaries:
+ vagrant @ session #4: sshd[2198]
+ vagrant @ user manager service: systemd[2216]
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  libdw1
+The following packages will be REMOVED:
+  apport apport-symptoms bc bolt fwupd fwupd-signed landscape-common
+  libatasmart4 libblockdev-crypto2 libblockdev-fs2 libblockdev-loop2
+  libblockdev-part-err2 libblockdev-part2 libblockdev-swap2 libblockdev-utils2
+  libblockdev2 libfwupdplugin5 libisns0 libmbim-glib4 libmbim-proxy
+  libmm-glib0 libmspack0 libnspr4 libnss3 libparted-fs-resize0 libqmi-glib5
+  libqmi-proxy libsmbios-c2 libtss2-esys0 libudisks2-0 libvolume-key1 libxmlb2
+  libxmlsec1 libxmlsec1-openssl libxslt1.1 lxd-agent-loader modemmanager
+  open-iscsi open-vm-tools python3-apport python3-automat python3-click
+  python3-colorama python3-constantly python3-hamcrest python3-hyperlink
+  python3-incremental python3-problem-report python3-pyasn1
+  python3-pyasn1-modules python3-service-identity python3-systemd
+  python3-twisted python3-twisted-bin python3-zope.interface sbsigntool
+  secureboot-db tpm-udev ubuntu-server udisks2 usb-modeswitch
+  usb-modeswitch-data zerofree
+The following NEW packages will be installed:
+  libdw1 systemd-coredump
+0 upgraded, 2 newly installed, 63 to remove and 0 not upgraded.
+Need to get 269 kB of archives.
+After this operation, 51.0 MB disk space will be freed.
+Get:1 http://archive.ubuntu.com/ubuntu focal/main amd64 libdw1 amd64 0.176-1.1build1 [226 kB]
+Get:2 http://archive.ubuntu.com/ubuntu focal-updates/universe amd64 systemd-coredump amd64 245.4-4ubuntu3.19 [43.6 kB]
+Fetched 269 kB in 1s (383 kB/s)
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 96622 files and directories currently installed.)
+Removing ubuntu-server (1.450.2) ...
+Removing apport (2.20.11-0ubuntu27.25) ...
+Removing apport-symptoms (0.23) ...
+Removing landscape-common (19.12-0ubuntu4.3) ...
+Removing bc (1.07.1-2build1) ...
+Removing bolt (0.9.1-2~ubuntu20.04.1) ...
+Removing fwupd-signed (1.27.1ubuntu7+1.2-2~20.04.1) ...
+Removing fwupd (1.7.9-1~20.04.1) ...
+Removing udisks2 (2.8.4-1ubuntu2) ...
+Removing libatasmart4:amd64 (0.19-5) ...
+Removing libblockdev-crypto2:amd64 (2.23-2ubuntu3) ...
+Removing libblockdev-fs2:amd64 (2.23-2ubuntu3) ...
+Removing libblockdev-loop2:amd64 (2.23-2ubuntu3) ...
+Removing libblockdev-part2:amd64 (2.23-2ubuntu3) ...
+Removing libblockdev-part-err2:amd64 (2.23-2ubuntu3) ...
+Removing libblockdev-swap2:amd64 (2.23-2ubuntu3) ...
+Removing libblockdev2:amd64 (2.23-2ubuntu3) ...
+Removing libblockdev-utils2:amd64 (2.23-2ubuntu3) ...
+Removing libfwupdplugin5:amd64 (1.7.9-1~20.04.1) ...
+Removing open-iscsi (2.0.874-7.1ubuntu6.2) ...
+Warning: Stopping iscsid.service, but it can still be activated by:
+  iscsid.socket
+Removing libisns0:amd64 (0.97-3) ...
+Removing modemmanager (1.18.6-1~ubuntu20.04.1) ...
+Unknown option: runtime
+Removing libqmi-proxy (1.30.4-1~ubuntu20.04.1) ...
+Removing libqmi-glib5:amd64 (1.30.4-1~ubuntu20.04.1) ...
+Removing libmbim-proxy (1.26.2-1~ubuntu20.04.1) ...
+Removing libmm-glib0:amd64 (1.18.6-1~ubuntu20.04.1) ...
+Removing open-vm-tools (2:11.3.0-2ubuntu0~ubuntu20.04.3) ...
+Removing libmspack0:amd64 (0.10.1-2) ...
+Removing libvolume-key1 (0.3.12-3.1) ...
+Removing libnss3:amd64 (2:3.49.1-1ubuntu1.8) ...
+Removing libnspr4:amd64 (2:4.25-1) ...
+Removing libparted-fs-resize0:amd64 (3.3-4ubuntu0.20.04.1) ...
+Removing libsmbios-c2 (2.4.3-1) ...
+Removing libtss2-esys0 (2.3.2-1ubuntu0.20.04.1) ...
+Removing libudisks2-0:amd64 (2.8.4-1ubuntu2) ...
+Removing libxmlb2:amd64 (0.3.6-2build1~20.04.1) ...
+Removing libxmlsec1-openssl:amd64 (1.2.28-2) ...
+Removing libxmlsec1:amd64 (1.2.28-2) ...
+Removing libxslt1.1:amd64 (1.1.34-4ubuntu0.20.04.1) ...
+Removing lxd-agent-loader (0.4) ...
+Removing python3-apport (2.20.11-0ubuntu27.25) ...
+Removing python3-twisted (18.9.0-11ubuntu0.20.04.2) ...
+Removing python3-automat (0.8.0-1ubuntu1) ...
+Removing python3-click (7.0-3) ...
+Removing python3-colorama (0.4.3-1build1) ...
+Removing python3-constantly (15.1.0-1build1) ...
+Removing python3-hamcrest (1.9.0-3) ...
+Removing python3-hyperlink (19.0.0-1) ...
+Removing python3-incremental (16.10.1-3.2) ...
+Removing python3-problem-report (2.20.11-0ubuntu27.25) ...
+Removing python3-service-identity (18.1.0-5build1) ...
+Removing python3-pyasn1-modules (0.2.1-0.2build1) ...
+Removing python3-pyasn1 (0.4.2-3build1) ...
+Removing python3-systemd (234-3build2) ...
+Removing python3-twisted-bin:amd64 (18.9.0-11ubuntu0.20.04.2) ...
+Removing python3-zope.interface (4.7.1-1) ...
+Removing secureboot-db (1.5) ...
+Removing sbsigntool (0.9.2-2ubuntu1.1) ...
+Removing tpm-udev (0.4) ...
+Removing usb-modeswitch (2.5.2+repack0-2ubuntu3) ...
+Removing usb-modeswitch-data (20191128-3) ...
+Removing zerofree (1.1.1-1) ...
+Removing libmbim-glib4:amd64 (1.26.2-1~ubuntu20.04.1) ...
+Selecting previously unselected package libdw1:amd64.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 94305 files and directories currently installed.)
+Preparing to unpack .../libdw1_0.176-1.1build1_amd64.deb ...
+Unpacking libdw1:amd64 (0.176-1.1build1) ...
+Selecting previously unselected package systemd-coredump.
+Preparing to unpack .../systemd-coredump_245.4-4ubuntu3.19_amd64.deb ...
+Unpacking systemd-coredump (245.4-4ubuntu3.19) ...
+Setting up libdw1:amd64 (0.176-1.1build1) ...
+Setting up systemd-coredump (245.4-4ubuntu3.19) ...
+Processing triggers for man-db (2.9.1-1) ...
+Processing triggers for dbus (1.12.16-2ubuntu2.3) ...
+Processing triggers for install-info (6.7.0.dfsg.2-5) ...
+Processing triggers for initramfs-tools (0.136ubuntu6.7) ...
+update-initramfs: Generating /boot/initrd.img-5.4.0-135-generic
+Processing triggers for libc-bin (2.31-0ubuntu9.9) ...
+
+Pending kernel upgrade!
+
+Running kernel version:
+  5.4.0-131-generic
+
+Diagnostics:
+  The currently running kernel version is not the expected kernel version 5.4.0-135-generic.
+
+Restarting the system to load the new kernel will not be handled automatically, so you should consider rebooting. [Return]
+
+Services to be restarted:
+ systemctl restart accounts-daemon.service
+ systemctl restart irqbalance.service
+ systemctl restart networkd-dispatcher.service
+ systemctl restart packagekit.service
+ systemctl restart polkit.service
+ systemctl restart ssh.service
+
+Service restarts being deferred:
+ /etc/needrestart/restart.d/dbus.service
+ systemctl restart systemd-logind.service
+ systemctl restart unattended-upgrades.service
+
+No containers need to be restarted.
+
+User sessions running outdated binaries:
+ vagrant @ session #4: sshd[2198]
+ vagrant @ user manager service: systemd[2216]
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following NEW packages will be installed:
+  tcpd
+0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+Need to get 24.4 kB of archives.
+After this operation, 121 kB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu focal/universe amd64 tcpd amd64 7.6.q-30 [24.4 kB]
+Fetched 24.4 kB in 0s (79.7 kB/s)
+Selecting previously unselected package tcpd.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 94363 files and directories currently installed.)
+Preparing to unpack .../tcpd_7.6.q-30_amd64.deb ...
+Unpacking tcpd (7.6.q-30) ...
+Setting up tcpd (7.6.q-30) ...
+Processing triggers for man-db (2.9.1-1) ...
+
+Pending kernel upgrade!
+
+Running kernel version:
+  5.4.0-131-generic
+
+Diagnostics:
+  The currently running kernel version is not the expected kernel version 5.4.0-135-generic.
+
+Restarting the system to load the new kernel will not be handled automatically, so you should consider rebooting. [Return]
+
+Services to be restarted:
+ systemctl restart accounts-daemon.service
+ systemctl restart irqbalance.service
+ systemctl restart networkd-dispatcher.service
+ systemctl restart packagekit.service
+ systemctl restart polkit.service
+ systemctl restart ssh.service
+
+Service restarts being deferred:
+ /etc/needrestart/restart.d/dbus.service
+ systemctl restart systemd-logind.service
+ systemctl restart unattended-upgrades.service
+
+No containers need to be restarted.
+
+User sessions running outdated binaries:
+ vagrant @ session #4: sshd[2198]
+ vagrant @ user manager service: systemd[2216]
+Reading package lists...
+Building dependency tree...
+Reading state information...
+update-notifier-common is already the newest version (3.192.30.11).
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following NEW packages will be installed:
+  vlock
+0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+Need to get 32.6 kB of archives.
+After this operation, 119 kB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu focal/universe amd64 vlock amd64 2.2.2-8 [32.6 kB]
+Fetched 32.6 kB in 0s (117 kB/s)
+Selecting previously unselected package vlock.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 94374 files and directories currently installed.)
+Preparing to unpack .../vlock_2.2.2-8_amd64.deb ...
+Unpacking vlock (2.2.2-8) ...
+Setting up vlock (2.2.2-8) ...
+Processing triggers for man-db (2.9.1-1) ...
+
+Pending kernel upgrade!
+
+Running kernel version:
+  5.4.0-131-generic
+
+Diagnostics:
+  The currently running kernel version is not the expected kernel version 5.4.0-135-generic.
+
+Restarting the system to load the new kernel will not be handled automatically, so you should consider rebooting. [Return]
+
+Services to be restarted:
+ systemctl restart accounts-daemon.service
+ systemctl restart irqbalance.service
+ systemctl restart networkd-dispatcher.service
+ systemctl restart packagekit.service
+ systemctl restart polkit.service
+ systemctl restart ssh.service
+
+Service restarts being deferred:
+ /etc/needrestart/restart.d/dbus.service
+ systemctl restart systemd-logind.service
+ systemctl restart unattended-upgrades.service
+
+No containers need to be restarted.
+
+User sessions running outdated binaries:
+ vagrant @ session #4: sshd[2198]
+ vagrant @ user manager service: systemd[2216]
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following NEW packages will be installed:
+  apparmor-profiles
+0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+Need to get 32.7 kB of archives.
+After this operation, 358 kB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 apparmor-profiles all 2.13.3-7ubuntu5.1 [32.7 kB]
+Fetched 32.7 kB in 0s (151 kB/s)
+Selecting previously unselected package apparmor-profiles.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 94402 files and directories currently installed.)
+Preparing to unpack .../apparmor-profiles_2.13.3-7ubuntu5.1_all.deb ...
+Unpacking apparmor-profiles (2.13.3-7ubuntu5.1) ...
+Setting up apparmor-profiles (2.13.3-7ubuntu5.1) ...
