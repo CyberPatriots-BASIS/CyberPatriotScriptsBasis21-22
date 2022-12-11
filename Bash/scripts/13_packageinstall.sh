@@ -1,5 +1,4 @@
-#! /bin/bashfunction 
-
+#! /bin/bash
 
 function f_package_install {
    

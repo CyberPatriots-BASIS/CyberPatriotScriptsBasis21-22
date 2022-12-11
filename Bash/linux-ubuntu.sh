@@ -92,14 +92,7 @@ function main {
         else
             break;
         fi
-    read -p "Configure HTTP? [y/n]: " c
-    	if [ $c = y ]
-	    then
-	        echo -c "Must be implemented"
-	    else
-	        break;
-	    fi
-
+    
     f_cron
     f_auditd
     f_disablemod
@@ -119,6 +112,7 @@ function main {
     f_admin
     f_linpeas
     f_lynis
+    f_cis
 }
 
 LOGFILE="hardening-$(hostname --short)-$(date +%y%m%d).log"
